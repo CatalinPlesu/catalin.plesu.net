@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Cătălin Pleșu</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="container">
+    <ul>
+      <li>
+        <a href="index.html" class="site-name">
+          <img src="assets/logo.png" alt="" class="site-logo">
+          Cătălin Pleșu
+        </a>
+      </li>
+    </ul>
+    <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
+    <ul id="nav-right" class="nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="theme-toggle" aria-label="Toggle theme"></button></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <p class="section-label">Projects</p>
+
+    <div class="projects-grid">
+
+      <!-- TimeSheet Bot -->
+      <article class="project-card" style="--card-accent: var(--orange);">
+        <p class="project-name">TimeSheet Bot</p>
+        <p class="project-desc">
+          Telegram bot for time tracking, built with Clean Architecture and DDD
+          (Domain / Application / Infrastructure / Presentation). SQLite for
+          persistence, ScottPlot for analytics charts, background workers for
+          automation. Also an honest test of agentic coding — useful within limits,
+          frustrating beyond them.
+        </p>
+        <div class="tag-row">
+          <span class="tag orange">C# / .NET 10</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">DDD</span>
+          <span class="tag">Clean Architecture</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu/timesheet/" class="project-link" target="_blank" rel="noopener">Source →</a>
+        </div>
+      </article>
+
+      <!-- Home Lab -->
+      <article class="project-card" style="--card-accent: var(--teal);">
+        <p class="project-name">
+          Home Lab
+          <span class="project-status">ongoing</span>
+        </p>
+        <p class="project-desc">
+          Two-node Proxmox setup — one always-on laptop node, one desktop brought up via
+          Wake-on-LAN on demand. AdGuard handles local DNS and network-wide ad/malicious
+          domain blocking. Nginx Proxy Manager provides SSL termination and reverse proxying.
+          An SSH tunnel through a Hetzner VPS bypasses CGNAT, exposing local dev environments
+          publicly without port forwarding. Rootless Podman for containers; Grafana + Alloy
+          for observability across the whole stack.
+        </p>
+        <div class="tag-row">
+          <span class="tag teal">Proxmox</span>
+          <span class="tag teal">Podman</span>
+          <span class="tag teal">Nginx</span>
+          <span class="tag teal">AdGuard</span>
+          <span class="tag teal">Grafana</span>
+          <span class="tag teal">SSH Tunneling</span>
+          <span class="tag teal">Linux</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-link" style="border: none; padding: 0; color: var(--pico-muted-color); font-family: var(--font-mono); font-size: 0.72rem; font-style: italic;">Working toward Terraform / K3s or NixOS</span>
+          <span></span>
+        </div>
+      </article>
+
+      <!-- CV Builder -->
+      <article class="project-card" style="--card-accent: var(--red);">
+        <p class="project-name">CV Builder</p>
+        <p class="project-desc">
+          Tag-driven web application in Ruby on Rails — input your data once,
+          generate a polished PDF via a pdflatex pipeline. Still live. Eventually
+          want to move it toward a YAML-as-resume-source approach with proper
+          tagging, so different versions can be generated for different contexts.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Ruby on Rails</span>
+          <span class="tag">LaTeX / pdflatex</span>
+          <span class="tag teal">Podman</span>
+          <span class="tag">MVC</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu/cv_builder" class="project-link" target="_blank" rel="noopener">Source →</a>
+        </div>
+      </article>
+
+      <!-- Moldova Job Scraper -->
+      <article class="project-card" style="--card-accent: var(--yellow);">
+        <p class="project-name">
+          Moldova Job Market Scraper
+          <span class="project-status">redesigning</span>
+        </p>
+        <p class="project-desc">
+          ETL pipeline scraping local Moldovan job boards. The original version
+          had a fatal flaw — it loaded 100+ MB of SQLite into the browser. That's
+          gone. Currently redesigning with a proper backend so the data is actually
+          queryable. Systemd timers for periodic runs, Pandas for structure.
+        </p>
+        <div class="tag-row">
+          <span class="tag yellow">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Systemd</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu" class="project-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <!-- ErgoType -->
+      <article class="project-card" style="--card-accent: var(--purple);">
+        <p class="project-name">
+          ErgoType
+          <span class="project-status">master's thesis</span>
+        </p>
+        <p class="project-desc">
+          Genetic algorithm for keyboard layout optimization — my master's thesis.
+          Evolves layouts against an ergonomic fitness function. The algorithm works;
+          the results are real but modest (~10–15% improvement over Colemak for the
+          tested corpus). Not enough of a gain to justify switching layouts for most
+          people, and setup complexity keeps it developer-only for now.
+        </p>
+        <div class="tag-row">
+          <span class="tag purple">Python</span>
+          <span class="tag">Genetic Algorithms</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag">UV</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu/ErgoType.2" class="project-link" target="_blank" rel="noopener">Source →</a>
+        </div>
+      </article>
+
+      <!-- Eden -->
+      <article class="project-card" style="--card-accent: var(--red);">
+        <p class="project-name">
+          Eden
+          <span class="project-status">university project</span>
+        </p>
+        <p class="project-desc">
+          A game built in Rust for a university project. Writing a game in a systems
+          language without a framework is a reliable way to understand memory ownership
+          and the borrow checker under pressure. The project stuck around as the most
+          starred repo on the account.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Rust</span>
+          <span class="tag">Game Dev</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu/Eden" class="project-link" target="_blank" rel="noopener">Source →</a>
+        </div>
+      </article>
+
+      <!-- Franken Pad -->
+      <article class="project-card" style="--card-accent: var(--green);">
+        <p class="project-name">Franken Pad</p>
+        <p class="project-desc">
+          Custom DIY macropad: mismatched switches, rotary encoders, toggle
+          switches — hence the name. Programmed with QMK firmware. More of a
+          hardware tinkering project than software, but I use it daily and it works.
+        </p>
+        <div class="tag-row">
+          <span class="tag green">C</span>
+          <span class="tag green">QMK</span>
+          <span class="tag">Hardware</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu/franken_pad" class="project-link" target="_blank" rel="noopener">Source →</a>
+        </div>
+      </article>
+
+      <!-- DiyBMS NiMH -->
+      <article class="project-card" style="--card-accent: var(--yellow);">
+        <p class="project-name">DIY BMS — NiMH</p>
+        <p class="project-desc">
+          A custom Battery Management System for NiMH cells. Built to understand
+          cell balancing and charge/discharge protection at the firmware level.
+          Written in C++, targeted at embedded microcontrollers. Hardware-meets-software
+          work that doesn't fit neatly into a software portfolio but taught more about
+          real-time constraints than most courses do.
+        </p>
+        <div class="tag-row">
+          <span class="tag">C++</span>
+          <span class="tag">Embedded</span>
+          <span class="tag">Hardware</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu/DiyBms_Nimh" class="project-link" target="_blank" rel="noopener">Source →</a>
+        </div>
+      </article>
+
+      <!-- 8-bit CPU -->
+      <article class="project-card" style="--card-accent: var(--teal);">
+        <p class="project-name">8-bit CPU</p>
+        <p class="project-desc">
+          Designed a semi-functional 8-bit CPU in Logisim from logic gates up —
+          ALU, registers, control unit. Then wrote a Python assembler to compile
+          human-readable assembly into machine code for it. Inspired by a YouTube
+          series but independently designed. One limitation remains: the oscillator/clock
+          is still a black box in the design.
+        </p>
+        <div class="tag-row">
+          <span class="tag teal">Python</span>
+          <span class="tag teal">Logisim</span>
+          <span class="tag">Assembly</span>
+          <span class="tag">Digital Logic</span>
+        </div>
+        <div class="project-footer">
+          <span></span>
+          <a href="https://github.com/CatalinPlesu" class="project-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Elixir mention -->
+    <hr>
+    <p style="font-size: 0.85rem; color: var(--pico-muted-color); font-family: var(--font-mono);">
+      Also explored: <strong>Elixir / Phoenix</strong> — built a web platform using the BEAM VM,
+      learned the concurrency model and LiveView patterns. Took it down.
+      The experience stuck.
+    </p>
+
+  </main>
+
+  <footer class="container">
+    <small>catalinplesu.xyz</small>
+    <small><a href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a></small>
+  </footer>
+
+</body>
+</html>

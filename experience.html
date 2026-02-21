@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Experience — Cătălin Pleșu</title>
+		<link rel="icon" href="assets/favicon.ico">
+		<script src="theme.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+		<nav class="container">
+			<ul>
+				<li>
+					<a href="index.html" class="site-name">
+						<img src="assets/logo.png" alt="" class="site-logo">
+						Cătălin Pleșu
+					</a>
+				</li>
+			</ul>
+			<button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
+			<ul id="nav-right" class="nav-right">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="experience.html" class="active">Experience</a></li>
+				<li><a href="projects.html">Projects</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><button id="theme-toggle" aria-label="Toggle theme"></button></li>
+			</ul>
+		</nav>
+
+		<main class="container">
+
+			<!-- ── EDUCATION ─────────────────────────────────────────── -->
+
+			<p class="section-label">Education</p>
+
+			<div class="edu-entry">
+				<div>
+					<div class="edu-degree">MSc — Information Technology</div>
+					<div class="edu-inst">Technical University of Moldova</div>
+				</div>
+				<span class="edu-year">2024 – 2026</span>
+			</div>
+
+			<div class="edu-entry">
+				<div>
+					<div class="edu-degree">BSc — Information Technology</div>
+					<div class="edu-inst">Technical University of Moldova</div>
+				</div>
+				<span class="edu-year">2020 – 2024</span>
+			</div>
+
+			<br>
+
+			<!-- ── PROFESSIONAL EXPERIENCE ──────────────────────────── -->
+
+			<p class="section-label">Professional Experience</p>
+
+			<div class="entry current">
+				<div class="entry-header">
+					<p class="entry-role">Junior Backend Engineer</p>
+					<p class="entry-company">Jivy Group</p>
+				</div>
+				<div class="entry-meta">
+					<span class="entry-date">Feb 2026 — Present</span>
+					<span class="entry-loc">Chișinău, Moldova</span>
+				</div>
+				<ul>
+					<li>Backend development on a multi-tenant AI assistant platform integrating Azure AI services (AI Foundry, Azure AI Search / RAG, Auth0, EF Core).</li>
+					<li>Working in a cross-functional team — two backends, three frontend engineers, QA, and a product owner.</li>
+					<li>Agile workflow with Git, managing own CI/CD deployments end-to-end via GitHub Actions.</li>
+				</ul>
+				<div class="tag-row">
+					<span class="tag orange">C# / .NET 10</span>
+					<span class="tag">Azure</span>
+					<span class="tag">AI Foundry</span>
+					<span class="tag">Azure AI Search</span>
+					<span class="tag">EF Core</span>
+					<span class="tag">Auth0</span>
+					<span class="tag">Hangfire</span>
+					<span class="tag">GitHub Actions</span>
+				</div>
+			</div>
+
+			<div class="entry">
+				<div class="entry-header">
+					<p class="entry-role">.NET Backend Intern</p>
+					<p class="entry-company">Jivy Group</p>
+				</div>
+				<div class="entry-meta">
+					<span class="entry-date">Nov 2025 — Jan 2026</span>
+					<span class="entry-loc">Chișinău, Moldova</span>
+				</div>
+				<ul>
+					<li>Built a Library Management API from scratch in a two-person team — contributed 83 of 166 total merged PRs, with peer code review throughout.</li>
+					<li>Implemented Clean Architecture with DDD, JWT/RBAC auth, Hangfire background jobs, Serilog + Azure Application Insights, FluentValidation, and EF Core + Dapper.</li>
+					<li>Established CI/CD pipelines (GitHub Actions) with automated builds, security scanning, and database migration across staging and production on Azure App Service.</li>
+					<li>Joined the production AI assistant project mid-internship — contributed 43 of 85 closed PRs, including the multi-tenancy architecture (EF Core global query filters, SaveChanges override), Knowledge Base CRUD + background processing, and Auth0 integration.</li>
+					<li>Led the database migration from MongoDB to SQL Server on the production project, including entity redesign and automated migrations.</li>
+				</ul>
+				<p class="entry-note">Hired as full-time engineer at end of internship.</p>
+				<div class="tag-row">
+					<span class="tag orange">C# / .NET 10</span>
+					<span class="tag">ASP.NET Core</span>
+					<span class="tag">DDD</span>
+					<span class="tag">EF Core</span>
+					<span class="tag">Dapper</span>
+					<span class="tag">Hangfire</span>
+					<span class="tag">Azure</span>
+					<span class="tag">SQL Server</span>
+					<span class="tag">Serilog</span>
+					<span class="tag">GitHub Actions</span>
+				</div>
+			</div>
+
+			<div class="entry">
+				<div class="entry-header">
+					<p class="entry-role">Junior Embedded Software Engineer</p>
+					<p class="entry-company">AROBS Software</p>
+				</div>
+				<div class="entry-meta">
+					<span class="entry-date">Mar 2023 — Mar 2024</span>
+					<span class="entry-loc">Chișinău, Moldova</span>
+				</div>
+				<ul>
+					<li>Developed and maintained automotive software compliant with ISO 26262 safety standards.</li>
+					<li>Refactored and tested legacy Embedded C codebases — improving performance and maintainability across multiple sprint cycles.</li>
+					<li>Agile/Scrum workflow with Jira and Git across multiple sprints.</li>
+				</ul>
+				<div class="tag-row">
+					<span class="tag">Embedded C</span>
+					<span class="tag">ISO 26262</span>
+					<span class="tag">Jira</span>
+					<span class="tag">Git</span>
+				</div>
+			</div>
+
+		</main>
+
+		<footer class="container">
+			<small>catalinplesu.xyz</small>
+			<small><a href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a></small>
+		</footer>
+	</body>
+</html>
