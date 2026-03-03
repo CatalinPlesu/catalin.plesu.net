@@ -3,260 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
   <title>Projects — Cătălin Pleșu</title>
   <link rel="icon" href="assets/favicon.ico">
   <script src="theme.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav class="container">
-    <ul>
-      <li>
-        <a href="index.html" class="site-name">
-          <img src="assets/logo.png" alt="" class="site-logo">
-          Cătălin Pleșu
-        </a>
-      </li>
-    </ul>
-    <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
-    <ul id="nav-right" class="nav-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><button id="theme-toggle" aria-label="Toggle theme"></button></li>
-    </ul>
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.png" alt="" class="site-logo">
+        Cătălin Pleșu
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <main class="container">
+  <main>
+    <div class="container">
 
-    <p class="section-label">Projects</p>
+      <p class="section-label">Projects</p>
 
-    <div class="projects-grid">
+      <div class="projects-grid">
 
-      <!-- TimeSheet Bot -->
-      <article class="project-card" style="--card-accent: var(--orange);">
-        <p class="project-name">TimeSheet Bot</p>
-        <p class="project-desc">
-          Telegram bot for time tracking, built with Clean Architecture and DDD
-          (Domain / Application / Infrastructure / Presentation). SQLite for
-          persistence, ScottPlot for analytics charts, background workers for
-          automation. Also an honest test of agentic coding — useful within limits,
-          frustrating beyond them.
-        </p>
-        <div class="tag-row">
-          <span class="tag orange">C# / .NET 10</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">DDD</span>
-          <span class="tag">Clean Architecture</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu/timesheet/" class="project-link" target="_blank" rel="noopener">Source →</a>
-        </div>
-      </article>
+        <!-- TimeSheet Bot -->
+        <article class="project-card" style="--card-accent: var(--gb-orange);">
+          <p class="project-name">TimeSheet Bot</p>
+          <p class="project-desc">
+            Telegram bot for personal time tracking — built with Clean Architecture and
+            DDD (Domain / Application / Infrastructure / Presentation). Persistent storage
+            via SQLite, analytics charts generated with ScottPlot, and background workers
+            handling scheduled automation. Also an honest test of agentic coding: useful
+            within its limits, frustrating beyond them.
+            Live at <strong>@catp_timesheet_bot</strong> (requires an invite).
+          </p>
+          <div class="project-footer">
+            <span></span>
+            <a href="https://github.com/CatalinPlesu/timesheet/" class="project-link" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-      <!-- Home Lab -->
-      <article class="project-card" style="--card-accent: var(--teal);">
-        <p class="project-name">
-          Home Lab
-          <span class="project-status">ongoing</span>
-        </p>
-        <p class="project-desc">
-          Two-node Proxmox setup — one always-on laptop node, one desktop brought up via
-          Wake-on-LAN on demand. AdGuard handles local DNS and network-wide ad/malicious
-          domain blocking. Nginx Proxy Manager provides SSL termination and reverse proxying.
-          An SSH tunnel through a Hetzner VPS bypasses CGNAT, exposing local dev environments
-          publicly without port forwarding. Rootless Podman for containers; Grafana + Alloy
-          for observability across the whole stack.
-        </p>
-        <div class="tag-row">
-          <span class="tag teal">Proxmox</span>
-          <span class="tag teal">Podman</span>
-          <span class="tag teal">Nginx</span>
-          <span class="tag teal">AdGuard</span>
-          <span class="tag teal">Grafana</span>
-          <span class="tag teal">SSH Tunneling</span>
-          <span class="tag teal">Linux</span>
-        </div>
-        <div class="project-footer">
-          <span class="project-link" style="border: none; padding: 0; color: var(--pico-muted-color); font-family: var(--font-mono); font-size: 0.72rem; font-style: italic;">Working toward Terraform / K3s or NixOS</span>
-          <span></span>
-        </div>
-      </article>
+        <!-- CV Builder -->
+        <article class="project-card" style="--card-accent: var(--gb-red);">
+          <p class="project-name">CV Builder</p>
+          <p class="project-desc">
+            Tag-driven web application in Ruby on Rails — input your data once, generate
+            a polished PDF via a pdflatex pipeline. Strict MVC architecture with Rails ERB
+            templates. Deployed as containerized services with Podman, orchestrating
+            separate Rails and LaTeX environments for isolated builds. Live and running.
+            Planning to extend toward a YAML-as-source model where different resume
+            versions can be generated by toggling context tags.
+          </p>
+          <div class="project-footer">
+            <a href="https://cv-builder.catalinplesu.xyz/" class="project-link live" target="_blank" rel="noopener">Live →</a>
+            <a href="https://github.com/CatalinPlesu/cv_builder" class="project-link" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-      <!-- CV Builder -->
-      <article class="project-card" style="--card-accent: var(--red);">
-        <p class="project-name">CV Builder</p>
-        <p class="project-desc">
-          Tag-driven web application in Ruby on Rails — input your data once,
-          generate a polished PDF via a pdflatex pipeline. Still live. Eventually
-          want to move it toward a YAML-as-resume-source approach with proper
-          tagging, so different versions can be generated for different contexts.
-        </p>
-        <div class="tag-row">
-          <span class="tag">Ruby on Rails</span>
-          <span class="tag">LaTeX / pdflatex</span>
-          <span class="tag teal">Podman</span>
-          <span class="tag">MVC</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu/cv_builder" class="project-link" target="_blank" rel="noopener">Source →</a>
-        </div>
-      </article>
+        <!-- Mandelbrot -->
+        <article class="project-card" style="--card-accent: var(--gb-teal);">
+          <p class="project-name">Mandelbrot Fractal Visualizer</p>
+          <p class="project-desc">
+            Interactive fractal explorer written in Rust using Dear ImGui for the UI panel.
+            Multithreaded CPU rendering — no shaders, no GPU, just careful threading to
+            keep the interaction responsive. Tab cycles color schemes, scroll wheel zooms,
+            click re-centers the world, right-click produces near-Julia sets, spacebar
+            toggles the animation sweep. Dear ImGui's immediate-mode model made building
+            the settings panel straightforward and feels like a proper tool rather than
+            a toy demo.
+          </p>
+          <div class="project-footer">
+            <a href="https://www.youtube.com/watch?v=Usu4ykRMAC8" class="project-link demo" target="_blank" rel="noopener">Demo →</a>
+            <a href="https://github.com/CatalinPlesu/mandelbrot" class="project-link" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-      <!-- Moldova Job Scraper -->
-      <article class="project-card" style="--card-accent: var(--yellow);">
-        <p class="project-name">
-          Moldova Job Market Scraper
-          <span class="project-status">redesigning</span>
-        </p>
-        <p class="project-desc">
-          ETL pipeline scraping local Moldovan job boards. The original version
-          had a fatal flaw — it loaded 100+ MB of SQLite into the browser. That's
-          gone. Currently redesigning with a proper backend so the data is actually
-          queryable. Systemd timers for periodic runs, Pandas for structure.
-        </p>
-        <div class="tag-row">
-          <span class="tag yellow">Python</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">Systemd</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu" class="project-link" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
+        <!-- Home Lab -->
+        <article class="project-card" style="--card-accent: var(--gb-teal);">
+          <p class="project-name">
+            Home Lab
+            <span class="project-status">ongoing</span>
+          </p>
+          <p class="project-desc">
+            Two-node Proxmox cluster — one always-on laptop node, one desktop brought up
+            via Wake-on-LAN on demand. AdGuard handles local DNS and network-wide
+            ad/malicious domain blocking. Nginx Proxy Manager provides SSL termination
+            and reverse proxying. An SSH tunnel through a Hetzner VPS bypasses CGNAT,
+            exposing local dev environments publicly without port forwarding. Rootless
+            Podman for containers; Grafana + Alloy for observability across the whole stack.
+          </p>
+          <div class="project-footer">
+            <span class="project-note">Working toward Terraform / K3s or NixOS</span>
+            <span></span>
+          </div>
+        </article>
 
-      <!-- ErgoType -->
-      <article class="project-card" style="--card-accent: var(--purple);">
-        <p class="project-name">
-          ErgoType
-          <span class="project-status">master's thesis</span>
-        </p>
-        <p class="project-desc">
-          Genetic algorithm for keyboard layout optimization — my master's thesis.
-          Evolves layouts against an ergonomic fitness function. The algorithm works;
-          the results are real but modest (~10–15% improvement over Colemak for the
-          tested corpus). Not enough of a gain to justify switching layouts for most
-          people, and setup complexity keeps it developer-only for now.
-        </p>
-        <div class="tag-row">
-          <span class="tag purple">Python</span>
-          <span class="tag">Genetic Algorithms</span>
-          <span class="tag">Jupyter</span>
-          <span class="tag">UV</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu/ErgoType.2" class="project-link" target="_blank" rel="noopener">Source →</a>
-        </div>
-      </article>
+        <!-- Moldova Job Scraper -->
+        <article class="project-card" style="--card-accent: var(--gb-yellow);">
+          <p class="project-name">
+            Moldova Job Market Scraper
+            <span class="project-status">redesigning</span>
+          </p>
+          <p class="project-desc">
+            ETL pipeline scraping Moldovan job boards — built to analyze local hiring
+            trends across tech and adjacent fields. Systemd timers run the scraper on
+            a schedule; Pandas handles transformation and structure. The original version
+            loaded a 100+ MB SQLite file into the browser, which was a fatal design flaw.
+            Currently being rebuilt with a proper backend so the data is actually
+            queryable and useful.
+          </p>
+          <div class="project-footer">
+            <span></span>
+            <a href="https://github.com/CatalinPlesu" class="project-link" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </article>
 
-      <!-- Eden -->
-      <article class="project-card" style="--card-accent: var(--red);">
-        <p class="project-name">
-          Eden
-          <span class="project-status">university project</span>
-        </p>
-        <p class="project-desc">
-          A game built in Rust for a university project. Writing a game in a systems
-          language without a framework is a reliable way to understand memory ownership
-          and the borrow checker under pressure. The project stuck around as the most
-          starred repo on the account.
-        </p>
-        <div class="tag-row">
-          <span class="tag">Rust</span>
-          <span class="tag">Game Dev</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu/Eden" class="project-link" target="_blank" rel="noopener">Source →</a>
-        </div>
-      </article>
+        <!-- ErgoType -->
+        <article class="project-card" style="--card-accent: var(--gb-purple);">
+          <p class="project-name">
+            ErgoType
+            <span class="project-status">master's thesis</span>
+          </p>
+          <p class="project-desc">
+            Genetic algorithm for keyboard layout optimization — my master's thesis.
+            Evolves layouts against a configurable ergonomic fitness function, accounting
+            for finger travel distance, same-hand alternation, and corpus frequency.
+            The algorithm works and the results are measurable (~10–15% improvement over
+            Colemak on the tested corpus), though not yet enough to justify switching
+            for most users. Uses UV, a modern Rust-written Python package manager, for
+            reproducible environment management.
+          </p>
+          <div class="project-footer">
+            <span></span>
+            <a href="https://github.com/CatalinPlesu/ErgoType.2" class="project-link" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-      <!-- Franken Pad -->
-      <article class="project-card" style="--card-accent: var(--green);">
-        <p class="project-name">Franken Pad</p>
-        <p class="project-desc">
-          Custom DIY macropad: mismatched switches, rotary encoders, toggle
-          switches — hence the name. Programmed with QMK firmware. More of a
-          hardware tinkering project than software, but I use it daily and it works.
-        </p>
-        <div class="tag-row">
-          <span class="tag green">C</span>
-          <span class="tag green">QMK</span>
-          <span class="tag">Hardware</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu/franken_pad" class="project-link" target="_blank" rel="noopener">Source →</a>
-        </div>
-      </article>
+        <!-- Franken Pad -->
+        <article class="project-card" style="--card-accent: var(--gb-green);">
+          <p class="project-name">Franken Pad</p>
+          <p class="project-desc">
+            Custom DIY macropad: mismatched switches, rotary encoders, toggle switches —
+            hence the name. Programmed with QMK firmware in C, configured for layer-based
+            shortcuts and media controls. Firmware is firmware — it runs on an MCU and
+            handles interrupt-driven key matrix scanning. I use it daily.
+          </p>
+          <div class="project-footer">
+            <span></span>
+            <a href="https://github.com/CatalinPlesu/franken_pad" class="project-link" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </article>
 
-      <!-- DiyBMS NiMH -->
-      <article class="project-card" style="--card-accent: var(--yellow);">
-        <p class="project-name">DIY BMS — NiMH</p>
-        <p class="project-desc">
-          A custom Battery Management System for NiMH cells. Built to understand
-          cell balancing and charge/discharge protection at the firmware level.
-          Written in C++, targeted at embedded microcontrollers. Hardware-meets-software
-          work that doesn't fit neatly into a software portfolio but taught more about
-          real-time constraints than most courses do.
-        </p>
-        <div class="tag-row">
-          <span class="tag">C++</span>
-          <span class="tag">Embedded</span>
-          <span class="tag">Hardware</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu/DiyBms_Nimh" class="project-link" target="_blank" rel="noopener">Source →</a>
-        </div>
-      </article>
+        <!-- Canti IoT -->
+        <article class="project-card" style="--card-accent: var(--gb-green);">
+          <p class="project-name">
+            Canti IoT
+            <span class="project-status">bachelor's thesis</span>
+          </p>
+          <p class="project-desc">
+            Portable environmental monitoring system built as a bachelor's thesis. Canti 1
+            is a custom open-hardware device — ESP32-C3 with a BME680 and additional sensors
+            measuring temperature, humidity, air quality, light, and noise. Canti Hub is the
+            companion Flutter mobile app that receives data, stores it long-term, and can
+            alert the user when any parameter drifts out of range. Firmware written in C++
+            with Arduino; more design patterns ended up in the embedded side than in the app.
+            Fully open source and open hardware on GitHub.
+          </p>
+          <div class="project-footer">
+            <span></span>
+            <div style="display:flex;gap:.5rem;">
+              <a href="https://github.com/CatalinPlesu/Canti-Hub" class="project-link" target="_blank" rel="noopener">App →</a>
+              <a href="https://github.com/CatalinPlesu/Canti-1" class="project-link" target="_blank" rel="noopener">Device →</a>
+            </div>
+          </div>
+        </article>
 
-      <!-- 8-bit CPU -->
-      <article class="project-card" style="--card-accent: var(--teal);">
-        <p class="project-name">8-bit CPU</p>
-        <p class="project-desc">
-          Designed a semi-functional 8-bit CPU in Logisim from logic gates up —
-          ALU, registers, control unit. Then wrote a Python assembler to compile
-          human-readable assembly into machine code for it. Inspired by a YouTube
-          series but independently designed. One limitation remains: the oscillator/clock
-          is still a black box in the design.
-        </p>
-        <div class="tag-row">
-          <span class="tag teal">Python</span>
-          <span class="tag teal">Logisim</span>
-          <span class="tag">Assembly</span>
-          <span class="tag">Digital Logic</span>
-        </div>
-        <div class="project-footer">
-          <span></span>
-          <a href="https://github.com/CatalinPlesu" class="project-link" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
+        <!-- 8-bit CPU -->
+        <article class="project-card" style="--card-accent: var(--gb-teal);">
+          <p class="project-name">8-bit CPU</p>
+          <p class="project-desc">
+            Designed a semi-functional 8-bit CPU in Logisim from logic gates up — ALU,
+            register file, control unit, memory bus. Then wrote a Python assembler to
+            compile human-readable assembly into machine code for the custom ISA.
+            One limitation remains: the oscillator is still a black box in the schematic.
+          </p>
+          <div class="project-footer">
+            <span></span>
+            <a href="https://github.com/CatalinPlesu" class="project-link" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </article>
+
+      </div>
 
     </div>
-
-    <!-- Elixir mention -->
-    <hr>
-    <p style="font-size: 0.85rem; color: var(--pico-muted-color); font-family: var(--font-mono);">
-      Also explored: <strong>Elixir / Phoenix</strong> — built a web platform using the BEAM VM,
-      learned the concurrency model and LiveView patterns. Took it down.
-      The experience stuck.
-    </p>
-
   </main>
 
-  <footer class="container">
-    <small>catalinplesu.xyz</small>
-    <small><a href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a></small>
+  <footer>
+    <div class="container">
+      <small>catalinplesu.xyz</small>
+      <small>
+        <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/CatalinPlesu" target="_blank" rel="noopener">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/cătălin-pleșu-042872209/" target="_blank" rel="noopener">LinkedIn</a>
+      </small>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
