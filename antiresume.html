@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark light">
-  <title>Antiresume — Cătălin Pleșu</title>
-  <link rel="icon" href="assets/favicon.ico">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="color-scheme" content="dark light">
+		<title>Antiresume — Cătălin Pleșu</title>
+		<link rel="icon" href="assets/favicon.ico">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
 
-  <nav>
-    <a href="index.html"><img src="assets/logo.png" alt="" class="logo">Cătălin Pleșu</a>
-    · <a href="experience.html">Experience</a>
-    · <a href="projects.html">Projects</a>
-    · <a href="inventory.html">Inventory</a>
-    · <a href="reading.html">Reading</a>
-    · <a href="for-employers.html">For Employers</a>
-    · <a href="blog.html">Blog</a>
-    · <a href="links.html">Links</a>
-  </nav>
+		<nav>
+			<img src="assets/logo.png" alt="" class="logo">
+			<a href="index.html" class="brand">Cătălin Pleșu</a>
+			<a href="experience.html">Experience</a>
+			<a href="projects.html">Projects</a>
+			<a href="inventory.html">Inventory</a>
+			<a href="reading.html">Reading</a>
+			<a href="for-employers.html">For Employers</a>
+			<a href="blog.html">Blog</a>
+			<a href="links.html">Links</a>
+		</nav>
 
-  <main>
-    <h1>Antiresume</h1>
+		<main>
+			<h1>Antiresume</h1>
 
-    <p>
-      The other side of the projects page. What didn't work, what was abandoned,
-      and where I made obviously wrong decisions.
-    </p>
+			<p>
+				The other side of the projects page. What didn't work, what was abandoned,
+				and where I made obviously wrong decisions.
+			</p>
 
-    <hr>
+			<hr>
 
-    <h3>Moldova Job Market Scraper</h3>
-    <p>
-      The scraper worked fine. It ran on a schedule, logged data, built up a decent
-      dataset of Moldovan job postings over time. Then I "shipped" a frontend dashboard.
-      The dashboard loaded the entire SQLite file — over 100 MB — into the browser
-      to query it with SQL.js. I knew this was wrong but assumed it would be fine anyway.
-      It wasn't — and that's before considering anyone on a phone or a modest laptop.
-      Currently being rebuilt with a real backend. The data is still there.
-    </p>
+			<h3>Moldova Job Market Scraper</h3>
+			<p>
+				The scraper worked fine. It ran on a schedule, logged data, built up a decent
+				dataset of Moldovan job postings over time. Then I "shipped" a frontend dashboard.
+				The dashboard loaded the entire SQLite file — over 100 MB — into the browser
+				to query it with SQL.js. I knew this was wrong but assumed it would be fine anyway.
+				It wasn't — and that's before considering anyone on a phone or a modest laptop.
+				Currently being rebuilt with a real backend. The data is still there.
+			</p>
 
-    <h3>Oroboros</h3>
-    <p>
-      Was supposed to be a SaaS. I built a landing page, then stopped and thought about it.
-      I don't use any paid SaaS product myself, and building one didn't align with what I
-      actually value. DHH did something worth thinking about with Once — sell software once,
-      no subscriptions, no lock-in. I should do something closer to that if I build a product.
-      The landing page is gone.
-    </p>
+			<h3>Oroboros</h3>
+			<p>
+				Was supposed to be a SaaS. I built a landing page, then stopped and thought about it.
+				I don't use any paid SaaS product myself, and building one didn't align with what I
+				actually value. DHH did something worth thinking about with Once — sell software once,
+				no subscriptions, no lock-in. I should do something closer to that if I build a product.
+				The landing page is gone.
+			</p>
 
-    <h3>Eden</h3>
-    <p>
-      A 3D game in Rust using Bevy. Got working basic movement, some physics, random terrain
-      generation, and flying whales that traveled on Bézier curves and spawned oranges for
-      reasons I no longer fully remember. The player could collect oranges for a score.
-      It was too hard for me to continue at the time. Removed from public listing.
-    </p>
+			<h3>Eden</h3>
+			<p>
+				A 3D game in Rust using Bevy. Got working basic movement, some physics, random terrain
+				generation, and flying whales that traveled on Bézier curves and spawned oranges for
+				reasons I no longer fully remember. The player could collect oranges for a score.
+				It was too hard for me to continue at the time. Removed from public listing.
+			</p>
 
-    <h3>8-bit CPU</h3>
-    <p>
-      The ALU, register file, control unit, and memory bus all work. The oscillator
-      is still a black box in the Logisim schematic. I got to the point where the
-      oscillator was the missing piece and stopped. The CPU does not run. I built an
-      assembler for an ISA the CPU can't execute yet.
-    </p>
+			<h3>8-bit CPU</h3>
+			<p>
+				The ALU, register file, control unit, and memory bus all work. The oscillator
+				is still a black box in the Logisim schematic. I got to the point where the
+				oscillator was the missing piece and stopped. The CPU does not run. I built an
+				assembler for an ISA the CPU can't execute yet.
+			</p>
 
-    <h3>ErgoType</h3>
-    <p>
-      The algorithm works. The results are measurable — ~10–15% improvement over Asset
-      on the tested corpus. I'm writing this on Asset.
-    </p>
+			<h3>ErgoType</h3>
+			<p>
+				The algorithm works. The results are measurable — ~10–15% improvement over Asset
+				on the tested corpus. I'm writing this on Asset.
+			</p>
 
-    <h3>TimeSheet Bot</h3>
-    <p>
-      Runs in production. I invited myself. Zero other users. Technically a success
-      at what it does; practically a tool I built and use alone.
-    </p>
+			<h3>TimeSheet Bot</h3>
+			<p>
+				Runs in production. I invited myself. Zero other users. Technically a success
+				at what it does; practically a tool I built and use alone.
+			</p>
 
-    <h3>Canti IoT</h3>
-    <p>
-      Built as a bachelor's thesis. The hardware works, the app works, Bluetooth connects.
-      The device lives in a drawer. I don't carry it anymore.
-    </p>
+			<h3>Canti IoT</h3>
+			<p>
+				Built as a bachelor's thesis. The hardware works, the app works, Bluetooth connects.
+				The device lives in a drawer. I don't carry it anymore.
+			</p>
 
-    <h3>CV Builder</h3>
-    <p>
-      Live and functional. I'm not sure anyone other than me has used it to generate a resume.
-    </p>
+			<h3>CV Builder</h3>
+			<p>
+				Live and functional. I'm not sure anyone other than me has used it to generate a resume.
+			</p>
 
-    <hr>
+			<hr>
 
-    <p>
-      The common thread: I build things to understand them, not to grow them.
-      Most of these did their job — I learned what I needed to learn.
-      The ones that didn't even do that are the honest failures.
-    </p>
-
-  </main>
-
-</body>
+			<p>
+				The common thread: I build things to understand them, not to grow them.
+				Most of these did their job — I learned what I needed to learn.
+				The ones that didn't even do that are the honest failures.
+			</p>
+		</main>
+	</body>
 </html>

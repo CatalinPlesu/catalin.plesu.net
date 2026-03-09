@@ -1,3 +1,9 @@
-body { max-width: 680px; margin: auto; padding: 1.5rem 1rem 0; }
-.logo { width: 28px; height: 28px; border-radius: 15%; vertical-align: middle; margin-right: 0.4em; }
-nav a { margin-right: 2em; }
+html { scrollbar-gutter: stable; }
+body { margin: 0; }
+a { color: #d56a1c; }
+a:visited { color: #d56a1c; }
+nav { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 1.5rem 1rem 0.5rem; }
+nav a { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.6rem; border: 1px solid transparent; border-radius: 0.5rem; text-decoration: none; white-space: nowrap; background: color-mix(in srgb, currentColor 6%, transparent); transition: background 150ms ease, border-color 150ms ease; }
+nav a:hover { border-color: color-mix(in srgb, currentColor 30%, transparent); background: color-mix(in srgb, currentColor 12%, transparent); }
+main { max-width: 680px; margin: 0 auto; padding: 0 1rem 1.5rem; }
+.logo { width: 28px; height: 28px; border-radius: 15%; vertical-align: middle; }
