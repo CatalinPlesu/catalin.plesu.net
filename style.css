@@ -1,7 +1,11 @@
 html { scrollbar-gutter: stable; }
+:root { --link-color: #9d50bb; }
+@media (prefers-color-scheme: dark) {
+  :root { --link-color: #00ffab; }
+}
 body { margin: 0; }
-a { color: #d56a1c; }
-a:visited { color: #d56a1c; }
+a { color: var(--link-color); }
+a:visited { color: var(--link-color); }
 nav { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 1.5rem 1rem 0.5rem; }
 nav a { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.6rem; border: 1px solid transparent; border-radius: 0.5rem; text-decoration: none; white-space: nowrap; background: color-mix(in srgb, currentColor 6%, transparent); transition: background 150ms ease, border-color 150ms ease; }
 nav a:hover { border-color: color-mix(in srgb, currentColor 30%, transparent); background: color-mix(in srgb, currentColor 12%, transparent); }
