@@ -4,8 +4,8 @@
 
   var PROTECTED = {
     'email-link': {
-      href:  'bWFpbHRvOmNhdGFsaW4ucGxlc3VAcHJvdG9uLm1l',
-      label: 'Y2F0YWxpbi5wbGVzdUBwcm90b24ubWU='
+      href:  'bWFpbHRvOmNhdGFsaW5AcGxlc3UubmV0',
+      label: 'Y2F0YWxpbkBwbGVzdS5uZXQ='
     },
     'telegram-link': {
       href:  'aHR0cHM6Ly90Lm1lL2NhdGFsaW5wbGVzdQ==',
