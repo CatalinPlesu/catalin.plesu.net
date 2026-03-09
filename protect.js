@@ -13,7 +13,7 @@
     },
     'resume-link': {
       href:  'YXNzZXRzL3Jlc3VtZS5wZGY=',
-      label: 'RG93bmxvYWQgUERG'
+      label: 'UmVzdW1l'
     },
     'resume-footer-link': {
       href:  'YXNzZXRzL3Jlc3VtZS5wZGY=',
