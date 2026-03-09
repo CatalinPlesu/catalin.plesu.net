@@ -3,7 +3,14 @@ html { scrollbar-gutter: stable; }
 @media (prefers-color-scheme: dark) {
   :root { --link-color: #00ffab; }
 }
-body { margin: 0; }
+body {
+  margin: 0;
+  font-family: ui-serif, "Iowan Old Style", "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
 a { color: var(--link-color); }
 a:visited { color: var(--link-color); }
 nav { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 1.5rem 1rem 0.5rem; }
