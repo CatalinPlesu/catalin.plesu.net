@@ -18,3 +18,10 @@ nav a { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 
 nav a:hover { border-color: color-mix(in srgb, currentColor 30%, transparent); background: color-mix(in srgb, currentColor 12%, transparent); }
 main { max-width: 680px; margin: 0 auto; padding: 0 1rem 1.5rem; }
 .logo { width: 28px; height: 28px; border-radius: 15%; vertical-align: middle; }
+.links-grid { display: grid; grid-template-columns: max-content; width: max-content; gap: 0.45rem; margin: 1.4rem auto 2rem; }
+.link-card { display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.6rem; border: 0; border-radius: 0.55rem; text-decoration: none; color: inherit; background: color-mix(in srgb, var(--link-color) 4%, transparent); transition: background 150ms ease, transform 150ms ease; box-sizing: border-box; width: 100%; }
+.link-card:hover { background: color-mix(in srgb, var(--link-color) 9%, transparent); transform: translateY(-1px); }
+.link-icon { width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; }
+.link-icon i { font-size: 1rem; color: var(--link-color); }
+.link-text { display: flex; flex-direction: column; align-items: flex-start; gap: 0.05rem; text-align: left; }
+.link-value { font-size: 1rem; color: color-mix(in srgb, currentColor 78%, transparent); }
