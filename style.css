@@ -25,3 +25,9 @@ main { max-width: 680px; margin: 0 auto; padding: 0 1rem 1.5rem; }
 .link-icon i { font-size: 1rem; color: var(--link-color); }
 .link-text { display: flex; flex-direction: column; align-items: flex-start; gap: 0.05rem; text-align: left; }
 .link-value { font-size: 1rem; color: color-mix(in srgb, currentColor 78%, transparent); }
+.inventory-lede { color: color-mix(in srgb, currentColor 75%, transparent); margin-top: 0.4rem; }
+.inventory-section { margin-top: 2rem; }
+.inventory-item { margin: 0.8rem 0 1rem; }
+.inventory-group { margin-top: 1rem; }
+.inventory-list { margin: 0.4rem 0 0 1.2rem; padding: 0; }
+.inventory-note { color: color-mix(in srgb, currentColor 75%, transparent); margin-top: 0.6rem; }

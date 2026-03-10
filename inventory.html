@@ -22,75 +22,98 @@
 
 		<main>
 			<h1>Inventory</h1>
+			<p class="inventory-lede">What I use and keep around for daily work, running, and home infrastructure.</p>
 
-			<h2>Hardware</h2>
+			<section class="inventory-section" id="hardware">
+				<h2>Hardware</h2>
+				<article class="inventory-item">
+					<h3>ThinkPad E595</h3>
+					<ul class="inventory-list">
+						<li>R7 3700u, 24 GB RAM</li>
+						<li>512 GB SSD + 2 TB WD Blue HDD</li>
+						<li>Ubuntu, Zen Browser, tmux, Ghostty, Neovim</li>
+					</ul>
+				</article>
+				<article class="inventory-item">
+					<h3>Pixel 6</h3>
+					<ul class="inventory-list">
+						<li>GrapheneOS</li>
+						<li>Telegram, Proton Mail, KeePassXC, Syncthing</li>
+					</ul>
+				</article>
+			</section>
 
-			<p>
-				<strong>ThinkPad E595</strong><br>
-				R7 3700u, 24 GB RAM, 512 GB SSD, 2 TB HDD WD Blue<br>
-				Ubuntu, Zen Browser, tmux, Ghostty, Neovim
-			</p>
+			<section class="inventory-section" id="keyboards">
+				<h2>Keyboards &amp; Pointing</h2>
+				<div class="inventory-group">
+					<h3>Keyboards</h3>
+					<p class="inventory-note">I use the Asset layout on all my keyboards.</p>
+					<article class="inventory-item">
+						<h4>Dactyl Manuform</h4>
+						<p>DIY built. Split ergonomic, thumb cluster, tented. QMK, Vial firmware. Used daily at work.</p>
+					</article>
+					<article class="inventory-item">
+						<h4>Ferris Sweep x2</h4>
+						<p>DIY built. One wireless ZMK, one wired QMK, Vial. The second has no keycaps yet.</p>
+					</article>
+					<article class="inventory-item">
+						<h4>Franken Pad</h4>
+						<p>DIY built. Custom macropad. Mismatched switches, rotary encoder. QMK, Vial firmware. Used daily.</p>
+					</article>
+					<article class="inventory-item">
+						<h4>ThinkPad keyboard</h4>
+						<p>Remapped via keyd on Linux when using the laptop directly.</p>
+					</article>
+				</div>
+				<div class="inventory-group">
+					<h3>Pointing</h3>
+					<ul class="inventory-list">
+						<li>Trackball: nameless AliExpress model.</li>
+						<li>Vertical mouse: nameless.</li>
+					</ul>
+				</div>
+				<div class="inventory-group">
+					<h3>Audio</h3>
+					<ul class="inventory-list">
+						<li>Bone conduction headphones, daily use (not for running).</li>
+					</ul>
+				</div>
+			</section>
 
-			<p>
-				<strong>Pixel 6</strong><br>
-				GrapheneOS, Telegram, Proton Mail, KeePassXC, Syncthing
-			</p>
+			<section class="inventory-section" id="running">
+				<h2>Running</h2>
+				<ul class="inventory-list">
+					<li>Left hand: Garmin watch</li>
+					<li>Chest: Coros heart rate strap</li>
+					<li>Eyes: running sunglasses that boost speed</li>
+					<li>Legs: Under Armour short tights</li>
+					<li>Top: generic tech running shirt</li>
+					<li>Feet: Altama Escalante 3</li>
+				</ul>
+				<p class="inventory-note"><strong>Not yet equipped:</strong>
+				Altra Olympus 5.</p>
+			</section>
 
-			<hr>
-
-			<h2>Keyboards &amp; Pointing</h2>
-
-			<p>
-				<strong>Dactyl Manuform</strong>
-				— built. Split ergonomic, thumb cluster, tented. QMK/Vial firmware.<br>
-				<strong>Ferris Sweep ×2</strong>
-				— both built. One wireless (ZMK), one wired (QMK/Vial). The second one has no keycaps. Still waiting.<br>
-				<strong>Franken Pad</strong>
-				— custom macropad. Mismatched switches, rotary encoder. QMK/Vial firmware. Used daily.<br>
-				<strong>ThinkPad keyboard</strong>
-				— remapped via keyd on Linux when using the laptop directly.
-			</p>
-
-			<p>
-				<strong>Trackball</strong>
-				— nameless AliExpress trackball. Works on Linux without drivers.<br>
-				<strong>Vertical mouse</strong>
-				— nameless, works on Linux without drivers.
-			</p>
-
-			<p>
-				<strong>Bone conduction headphones</strong>
-				— daily, not running.
-			</p>
-
-			<hr>
-
-			<h2>Running</h2>
-
-			<p>
-				Left hand ← Garmin watch<br>
-				Chest ← Coros heart rate strap<br>
-				Eyes ← running sunglasses that boost speed<br>
-				Legs ← Under Armour short tights<br>
-				Top ← generic tech running shirt<br>
-				Feet ← Altama Escalante 3
-			</p>
-
-			<p>
-				<strong>Not yet equipped:</strong>
-				Altra Olympus 5
-			</p>
-
-			<hr>
-
-			<h2>Homelab</h2>
-
-			<p>
-				Two-node Proxmox cluster — the awake node is a laptop with 8 GB RAM and an i5 7th-gen U-series CPU;
-				the sleeping one is a 32 GB RAM R7 5700G PC on Wake-on-LAN. AdGuard for DNS. Nginx Proxy Manager for SSL
-				termination. Rootless Podman for containers.
-				Grafana + Alloy for observability. Tailscale when I'm out of the home network.
-			</p>
+			<section class="inventory-section" id="homelab">
+				<h2>Homelab</h2>
+				<article class="inventory-item">
+					<h3>Cluster</h3>
+					<ul class="inventory-list">
+						<li>Two-node Proxmox cluster.</li>
+						<li>Awake node: laptop, 8 GB RAM, i5 7th-gen U-series CPU.</li>
+						<li>Sleeping node: 32 GB RAM R7 5700G PC on Wake-on-LAN.</li>
+					</ul>
+				</article>
+				<article class="inventory-item">
+					<h3>Services</h3>
+					<ul class="inventory-list">
+						<li>AdGuard for DNS.</li>
+						<li>Nginx Proxy Manager for SSL termination.</li>
+						<li>Rootless Podman for containers.</li>
+						<li>Tailscale when I'm out of the home network.</li>
+					</ul>
+				</article>
+			</section>
 		</main>
 	</body>
 </html>
