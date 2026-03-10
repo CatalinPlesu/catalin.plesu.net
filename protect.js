@@ -12,12 +12,7 @@
       label: 'QGNhdGFsaW5wbGVzdQ=='
     },
     'resume-link': {
-      href:  'YXNzZXRzL3Jlc3VtZS5wZGY=',
-      label: 'UmVzdW1l'
-    },
-    'resume-footer-link': {
-      href:  'YXNzZXRzL3Jlc3VtZS5wZGY=',
-      label: null
+      href:  'YXNzZXRzL3Jlc3VtZS5wZGY='
     }
   };
 
