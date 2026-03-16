@@ -126,7 +126,7 @@ blockquote p { margin: 0.2em 0; }
 
 .links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.8rem;
   margin: 1.2rem 0 0;
 }
