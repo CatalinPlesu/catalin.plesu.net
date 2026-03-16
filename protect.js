@@ -1,6 +1,6 @@
 (function () {
   // Values injected into DOM via JS — not in HTML source.
-  // Stops all basic scrapers that only parse static HTML.
+  // Discourages basic scrapers that only parse static HTML.
 
   var PROTECTED = {
     'email-link': {

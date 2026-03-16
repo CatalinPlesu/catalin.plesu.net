@@ -27,7 +27,7 @@
 
 			<p>
 				<strong>MSc — Information Technology</strong><br>
-				Technical University of Moldova, 2024 – 2026 (completed)
+				Technical University of Moldova, 2024 – 2026
 			</p>
 
 			<p>
@@ -38,87 +38,32 @@
 			<hr>
 
 			<p>
-				Currently looking for a mid-level backend role.
+				Currently looking for a backend role.
 			</p>
 
 			<h2>Professional Experience</h2>
 
 			<h3>Backend Engineer — Jivy Group</h3>
 			<p><em>Feb 2026 — Present, Chișinău, Moldova</em></p>
-			<ul>
-				<li>
-					Extended the AI assistant platform to support private organizational knowledge bases —
-					enabling grounded, context-aware responses based on internal documents — by designing
-					and building the full RAG pipeline from scratch: Azure Blob Storage ingestion with
-					metadata, embedding model deployment, and Azure AI Search configured for both semantic
-					and hybrid retrieval modes.
-				</li>
-				<li>
-					Reduced the team's deployment cycle from a manual, hours-long process to a few minutes
-					per PR by building the CI/CD pipelines on GitHub Actions — covering automated builds,
-					test execution, security scanning, and staged deployment to Azure — and owning all
-					backend deploy pipelines from that point forward.
-				</li>
-				<li>
-					Delivering production backend APIs in C# / ASP.NET Core following Clean Architecture
-					within a cross-functional team of seven, across structured Agile sprint cycles with
-					frontend engineers, QA, and a product owner.
-				</li>
-			</ul>
+			<p>
+				Building backend APIs for an AI assistant platform in C# / ASP.NET Core, supporting
+				feature delivery and the platform’s core data and retrieval needs.
+			</p>
 
 			<h3>.NET Backend Intern — Jivy Group</h3>
 			<p><em>Nov 2025 — Jan 2026, Chișinău, Moldova</em></p>
-			<ul>
-				<li>
-					Eliminated multi-tenant data leakage risk platform-wide by redesigning access control
-					from a fragile pattern of per-endpoint checks into EF Core global query filters combined
-					with a SaveChanges override — making organization-level isolation automatic at the ORM
-					layer, impossible to accidentally bypass, and enforceable without touching individual
-					endpoint logic.
-				</li>
-				<li>
-					Migrated the production AI platform's data layer from MongoDB to SQL Server with zero
-					downtime by redesigning the core entity model from scratch, authoring complete EF Core
-					Fluent API configuration for all relationships and constraints, and automating the
-					migration pipeline end-to-end through GitHub Actions.
-				</li>
-				<li>
-					Integrated Auth0 as the platform's identity layer and Azure OpenAI as the LLM backend
-					from initial setup; delivered three social channel integrations — WhatsApp webhook
-					processing, Instagram and Facebook OAuth callback flows, and Microsoft Teams deployment
-					notifications — across a single sprint cycle.
-				</li>
-				<li>
-					Took the Knowledge Base system from zero to production: designed the source ingestion
-					model, built full CRUD with validation, implemented Hangfire background jobs for
-					asynchronous knowledge indexing and source status tracking, and refined the API across
-					multiple rounds of senior code review until it was stable enough to hand off.
-				</li>
-				<li>
-					Independently built and shipped a full Library Management REST API in .NET 10,
-					delivering roughly half of all project pull requests: Clean Architecture with DDD,
-					JWT authentication with RBAC, Hangfire background jobs (overdue detection, condition
-					updates, SendGrid email with HTML templates), FluentValidation, EF Core + Dapper,
-					Serilog with Azure Application Insights, OWASP-aligned security headers, complete
-					CI/CD pipelines, Azure App Service deployment, and a Mithril.js frontend.
-				</li>
-			</ul>
+			<p>
+				Supported the platform backend by shipping scoped features in data access, identity,
+				and integrations, while learning the team’s architecture and review standards.
+			</p>
 			<p><em>Converted to full-time engineer at the end of the internship.</em></p>
 
 			<h3>Embedded Software Engineer — AROBS Software</h3>
 			<p><em>Mar 2023 — Mar 2024, Chișinău, Moldova</em></p>
-			<ul>
-				<li>
-					Maintained safety-certified automotive software across multiple product lines, working
-					within ISO 26262 functional safety constraints — an environment where every code change
-					requires documented justification and incorrect behavior has physical consequences.
-				</li>
-				<li>
-					Reduced technical debt across legacy Embedded C codebases by systematically refactoring
-					for testability and maintainability while preserving safety certifications throughout,
-					tracked across multiple Agile/Scrum sprint cycles with Jira and Git.
-				</li>
-			</ul>
+			<p>
+				Maintained safety-certified automotive software in Embedded C under ISO 26262 constraints,
+				with a focus on correctness, traceability, and incremental refactoring.
+			</p>
 		</main>
 	</body>
 </html>
