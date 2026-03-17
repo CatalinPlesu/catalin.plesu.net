@@ -23,101 +23,101 @@
 			<a href="links.html">Links</a>
 		</nav>
 
-		<main>
-			<h1>Inventory</h1>
-			<p class="inventory-lede">What I use and keep around for daily work, running, and home infrastructure.</p>
+		<div class="page-content">
 
-			<section class="inventory-section" id="hardware">
-				<h2>Hardware</h2>
-				<article class="inventory-item">
-					<h3>ThinkPad E595 (daily driver)</h3>
-					<ul class="inventory-list">
-						<li>R7 3700u, 24 GB RAM</li>
-						<li>512 GB SSD + 2 TB WD Blue HDD</li>
-						<li>Ubuntu, Zen Browser, tmux, Ghostty, Neovim</li>
-					</ul>
-				</article>
-				<article class="inventory-item">
-					<h3>Pixel 6</h3>
-					<ul class="inventory-list">
-						<li>GrapheneOS</li>
-						<li>Telegram, Proton Mail, KeePassXC, Syncthing</li>
-					</ul>
-				</article>
-			</section>
-
-			<section class="inventory-section" id="keyboards">
-				<h2>Keyboards &amp; Pointing</h2>
-				<div class="inventory-group">
-					<h3>Keyboards</h3>
-					<p class="inventory-note">I use the Asset layout on all my keyboards.</p>
+			<div class="section-stack">
+				<section class="section-card inventory-section" id="hardware">
+					<h3>Hardware</h3>
 					<article class="inventory-item">
-						<h4>Dactyl Manuform</h4>
-						<p>DIY built. Split ergonomic, thumb cluster. QMK, Vial firmware. Used daily at work.</p>
+						<h4>ThinkPad E595 (daily driver)</h4>
+						<ul class="inventory-list">
+							<li>R7 3700u, 24 GB RAM</li>
+							<li>512 GB SSD + 2 TB WD Blue HDD</li>
+							<li>Ubuntu, Zen Browser, tmux, Ghostty, Neovim</li>
+						</ul>
 					</article>
 					<article class="inventory-item">
-						<h4>Ferris Sweep x2</h4>
-						<p>DIY built. One wireless ZMK, one wired QMK, Vial.</p>
+						<h4>Pixel 6</h4>
+						<ul class="inventory-list">
+							<li>GrapheneOS</li>
+							<li>Telegram, Proton Mail, KeePassXC, Syncthing</li>
+						</ul>
+					</article>
+				</section>
+
+				<section class="section-card inventory-section" id="keyboards">
+					<h3>Keyboards &amp; Pointing</h3>
+					<div class="inventory-group">
+						<h4>Keyboards</h4>
+						<p class="inventory-note">I use the Asset layout on all my keyboards.</p>
+						<article class="inventory-item">
+							<h5>Dactyl Manuform</h5>
+							<p>DIY built. Split ergonomic, thumb cluster. QMK, Vial firmware. Used daily at work.</p>
+						</article>
+						<article class="inventory-item">
+							<h5>Ferris Sweep x2</h5>
+							<p>DIY built. One wireless ZMK, one wired QMK, Vial.</p>
+						</article>
+						<article class="inventory-item">
+							<h5>Franken Pad</h5>
+							<p>DIY built. Custom macropad. 5 switches, 3 rotary encoders, 3 toggle switches. QMK, Vial firmware. Used daily.</p>
+						</article>
+						<article class="inventory-item">
+							<h5>ThinkPad keyboard</h5>
+							<p>Remapped via keyd on Linux when using the laptop directly.</p>
+						</article>
+					</div>
+					<div class="inventory-group">
+						<h4>Pointing</h4>
+						<ul class="inventory-list">
+							<li>Trackball — nameless from AliExpress.</li>
+							<li>Vertical mouse — nameless from Temu.</li>
+						</ul>
+					</div>
+					<div class="inventory-group">
+						<h4>Audio</h4>
+						<ul class="inventory-list">
+							<li>Bone conduction headphones.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="section-card inventory-section" id="running">
+					<h3>Running</h3>
+					<ul class="inventory-list">
+						<li>Left hand: Garmin watch</li>
+						<li>Chest: Coros heart rate strap</li>
+						<li>Eyes: running sunglasses that boost speed</li>
+						<li>Legs: Under Armour short tights</li>
+						<li>Top: generic tech running shirt</li>
+						<li>Feet (road): Escalante 3</li>
+					</ul>
+					<p class="inventory-note"><strong>Not yet equipped:</strong>
+					Feet (trail): Olympus 5.</p>
+				</section>
+
+				<section class="section-card inventory-section" id="homelab">
+					<h3>Homelab</h3>
+					<article class="inventory-item">
+						<h4>Cluster</h4>
+						<ul class="inventory-list">
+							<li>Two-node Proxmox cluster.</li>
+							<li>The cluster laptop is separate from my daily driver.</li>
+							<li>Awake node (cluster laptop): 8 GB RAM, i5 7th-gen U-series CPU.</li>
+							<li>Sleeping node: 32 GB RAM R7 5700G PC on Wake-on-LAN.</li>
+						</ul>
 					</article>
 					<article class="inventory-item">
-						<h4>Franken Pad</h4>
-						<p>DIY built. Custom macropad. 5 switches, 3 rotary encoders, 3 toggle switches. QMK, Vial firmware. Used daily.</p>
+						<h4>Services</h4>
+						<ul class="inventory-list">
+							<li>AdGuard for DNS.</li>
+							<li>Nginx Proxy Manager for SSL termination.</li>
+							<li>Rootless Podman for containers.</li>
+							<li>Tailscale when I'm out of the home network.</li>
+						</ul>
 					</article>
-					<article class="inventory-item">
-						<h4>ThinkPad keyboard</h4>
-						<p>Remapped via keyd on Linux when using the laptop directly.</p>
-					</article>
-				</div>
-				<div class="inventory-group">
-					<h3>Pointing</h3>
-					<ul class="inventory-list">
-						<li>Trackball — nameless from AliExpress.</li>
-						<li>Vertical mouse — nameless from Temu.</li>
-					</ul>
-				</div>
-				<div class="inventory-group">
-					<h3>Audio</h3>
-					<ul class="inventory-list">
-						<li>Bone conduction headphones.</li>
-					</ul>
-				</div>
-			</section>
-
-			<section class="inventory-section" id="running">
-				<h2>Running</h2>
-				<ul class="inventory-list">
-					<li>Left hand: Garmin watch</li>
-					<li>Chest: Coros heart rate strap</li>
-					<li>Eyes: running sunglasses that boost speed</li>
-					<li>Legs: Under Armour short tights</li>
-					<li>Top: generic tech running shirt</li>
-					<li>Feet (road): Escalante 3</li>
-				</ul>
-				<p class="inventory-note"><strong>Not yet equipped:</strong>
-				Feet (trail): Olympus 5.</p>
-			</section>
-
-			<section class="inventory-section" id="homelab">
-				<h2>Homelab</h2>
-				<article class="inventory-item">
-					<h3>Cluster</h3>
-					<ul class="inventory-list">
-						<li>Two-node Proxmox cluster.</li>
-						<li>The cluster laptop is separate from my daily driver.</li>
-						<li>Awake node (cluster laptop): 8 GB RAM, i5 7th-gen U-series CPU.</li>
-						<li>Sleeping node: 32 GB RAM R7 5700G PC on Wake-on-LAN.</li>
-					</ul>
-				</article>
-				<article class="inventory-item">
-					<h3>Services</h3>
-					<ul class="inventory-list">
-						<li>AdGuard for DNS.</li>
-						<li>Nginx Proxy Manager for SSL termination.</li>
-						<li>Rootless Podman for containers.</li>
-						<li>Tailscale when I'm out of the home network.</li>
-					</ul>
-				</article>
-			</section>
-		</main>
+				</section>
+			</div>
+		</div>
 	</body>
 </html>

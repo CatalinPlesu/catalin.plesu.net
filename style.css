@@ -99,6 +99,11 @@ main {
   box-shadow: var(--shadow);
 }
 
+.page-content {
+  max-width: 760px;
+  margin: 1.2rem auto 2.6rem;
+}
+
 .panel-section {
   max-width: 760px;
   margin: 1.2rem auto 2.6rem;
@@ -216,8 +221,27 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
 .link-text { display: flex; flex-direction: column; align-items: flex-start; gap: 0.08rem; text-align: left; }
 .link-value { font-size: 1.05rem; color: color-mix(in srgb, var(--text) 85%, transparent); }
 
+.section-stack {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.section-card {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.section-card > h2:first-child,
+.section-card > h3:first-child {
+  margin-top: 0;
+}
+
 .inventory-lede { color: var(--muted); margin-top: 0.4rem; }
-.inventory-section { margin-top: 1.8rem; padding: 1.1rem 1rem; border: 1px solid var(--border); border-radius: 14px; background: color-mix(in srgb, var(--panel) 88%, transparent); }
+.inventory-section { margin: 0; }
 .inventory-item { margin: 0.6rem 0 0.9rem; }
 .inventory-group { margin-top: 0.9rem; }
 .inventory-list { margin: 0.4rem 0 0.3rem 1.1rem; padding: 0; }
