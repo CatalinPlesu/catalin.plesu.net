@@ -132,6 +132,18 @@ main h1:first-child { margin-top: 0.4em; }
 
 p { margin: 0 0 0.8em; color: var(--text); }
 
+.entry-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4em;
+}
+
+.entry-row .period {
+  white-space: nowrap;
+}
+
 ul { margin: 0.4em 0 0.8em 1.1em; padding: 0; }
 li { margin-bottom: 0.35em; }
 
