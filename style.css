@@ -93,6 +93,16 @@ main {
   box-shadow: var(--shadow);
 }
 
+.panel-section {
+  max-width: 760px;
+  margin: 1.2rem auto 2.6rem;
+  padding: 2rem 1.6rem 2.3rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
 .profile-layout {
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
@@ -206,6 +216,12 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
 .inventory-group { margin-top: 0.9rem; }
 .inventory-list { margin: 0.4rem 0 0.3rem 1.1rem; padding: 0; }
 .inventory-note { color: var(--muted); margin-top: 0.5rem; }
+
+.guestbook-panel h2 {
+  margin-top: 0;
+}
+
+
 
 @media (max-width: 640px) {
   body { padding: 0.75rem 0.9rem 1rem; }
