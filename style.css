@@ -76,10 +76,16 @@ nav a {
   color: var(--text);
   background: color-mix(in srgb, var(--panel) 70%, transparent);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-  transition: background 150ms ease, border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
 }
 
-nav a:hover { border-color: color-mix(in srgb, var(--accent) 45%, transparent); background: color-mix(in srgb, var(--panel) 90%, transparent); transform: translateY(-1px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); }
+nav a:hover,
+nav a:active,
+nav a:focus-visible {
+  border-color: var(--border);
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  outline: none;
+}
 
 nav .brand { font-family: "Fraunces", "Times New Roman", serif; font-weight: 700; letter-spacing: -0.01em; }
 
