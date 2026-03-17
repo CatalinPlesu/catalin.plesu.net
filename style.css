@@ -9,6 +9,8 @@ html { scrollbar-gutter: stable; }
   --panel: #fdfaf4;
   --border: color-mix(in srgb, var(--text) 14%, transparent);
   --shadow: 0 18px 55px rgba(23, 16, 8, 0.12);
+  --code-bg: #f8f8f8;
+  --code-text: #e83e8c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +22,8 @@ html { scrollbar-gutter: stable; }
     --panel: #14171d;
     --border: color-mix(in srgb, var(--text) 18%, transparent);
     --shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+    --code-bg: #2b2f36;
+    --code-text: #ff7ab3;
   }
 }
 
@@ -105,7 +109,6 @@ main {
   display: block;
   border-radius: 26px;
   object-fit: contain;
-  border: 1px solid var(--border);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
   background: transparent;
 }
@@ -134,16 +137,28 @@ li { margin-bottom: 0.35em; }
 
 hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
 
-blockquote {
+.quote-inline {
   margin: 0.6rem 0 1.4rem;
-  padding: 0.9rem 1.1rem;
-  background: color-mix(in srgb, var(--accent) 8%, transparent);
-  border-left: 4px solid var(--accent);
-  border-radius: 12px;
-  color: var(--text);
-  font-size: 1.05rem;
+  display: grid;
+  gap: 0.45rem;
 }
-blockquote p { margin: 0.2em 0; }
+
+.quote-inline code {
+  font-family: "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--code-text);
+  background: var(--code-bg);
+  border-radius: 4px;
+  padding: 0.2rem 0.35rem;
+  display: inline-block;
+}
+
+.quote-inline span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: right;
+}
 
 .links-grid {
   display: grid;
