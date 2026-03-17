@@ -62,8 +62,7 @@
 			<h3>Mandelbrot Fractal Visualizer</h3>
 			<p>
 				Interactive fractal explorer written in Rust using Dear ImGui for the UI panel.
-				Multithreaded CPU rendering — no shaders, no GPU, just careful threading to
-				keep the interaction responsive. Tab cycles color schemes, scroll wheel zooms,
+				Multithreaded CPU rendering. Tab cycles color schemes, scroll wheel zooms,
 				click re-centers the world, right-click produces near-Julia sets, spacebar
 				toggles the animation sweep.
 			</p>
@@ -116,14 +115,14 @@
 			<h3>Keyboard Builds</h3>
 			<p>
 				<strong>Dactyl Manuform</strong>
-				— fully built. Split ergonomic with a thumb cluster, tented.
-				Wired, hand-wired matrix, QMK firmware.<br>
+				— DIY build: adjusted the 3D model, printed it, soldered everything,
+				and sourced each part separately. Split ergonomic with a thumb cluster,
+				tented. Wired, hand-wired matrix, QMK firmware.<br>
 				<strong>Ferris Sweep ×2</strong>
-				— both built. 34-key split minimalist boards. The second one
-				has no keycaps — couldn't afford them at the time. Still waiting on that.<br>
+				— both built. 34-key split minimalist boards.<br>
 				<strong>Franken Pad</strong>
-				— custom macropad: mismatched switches, rotary encoders, toggle
-				switches. QMK firmware in C for key matrix scanning and layer logic. I use it every day.
+				— custom macropad: mismatched mechanical keyboard switches, rotary encoders,
+				on/off toggle switches. QMK firmware. I use it every day.
 			</p>
 			<p>
 				<a href="https://github.com/CatalinPlesu/franken_pad" target="_blank" rel="noopener">Franken Pad source</a>
@@ -149,10 +148,11 @@
 
 			<h3>8-bit CPU</h3>
 			<p>
-				Designed a semi-functional 8-bit CPU in Logisim from logic gates up — ALU,
+				Designed a working 8-bit CPU in Logisim from logic gates up — ALU,
 				register file, control unit, memory bus. Then wrote a Python assembler to
 				compile human-readable assembly into machine code for the custom ISA.
-				One limitation remains: the oscillator is still a black box in the schematic.
+				It runs, but there's no programming mechanism yet; you have to manually
+				load the program into its integrated RAM before execution.
 			</p>
 			<p><a href="https://github.com/CatalinPlesu" target="_blank" rel="noopener">GitHub</a></p>
 		</main>
