@@ -10,99 +10,105 @@
 		<title>Links — Cătălin Pleșu</title>
 		<link rel="icon" href="assets/favicon.ico">
 		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 	</head>
 	<body>
 
 		<nav>
-			<img src="assets/logo.png" alt="" class="logo">
-			<a href="index.html" class="brand">Cătălin Pleșu</a>
-			<a href="experience.html">Experience</a>
-			<a href="projects.html">Projects</a>
-			<a href="inventory.html">Inventory</a>
-			<a href="books.html">Books</a>
-			<a href="links.html">Links</a>
+			<img src="assets/logo.png" alt="Cătălin Pleșu logo" class="logo" width="44" height="44">
+			<a href="index.html" class="brand nav-link">Cătălin Pleșu</a>
+			<a href="experience.html" class="nav-link">Experience</a>
+			<a href="projects.html" class="nav-link">Projects</a>
+			<a href="inventory.html" class="nav-link">Inventory</a>
+			<a href="books.html" class="nav-link">Books</a>
+			<a href="links.html" class="nav-link is-active" aria-current="page">Links</a>
 		</nav>
 
-		<div class="page-content">
+		<main class="page-content">
+			<header class="page-header">
+				<p class="page-eyebrow">Find me online</p>
+				<h1>Links</h1>
+			</header>
 			<section class="section-card">
-				<h3>Links</h3>
 				<div class="links-grid">
 				<a class="link-card" href="mailto:catalin@plesu.net">
-					<span class="link-icon" aria-hidden="true">
-						<i class="fa-solid fa-envelope"></i>
-					</span>
+					<span class="link-icon icon-envelope" aria-hidden="true"></span>
 					<span class="link-text">
 						<span class="link-value">catalin@plesu.net</span>
 					</span>
 				</a>
 
 				<a class="link-card" href="https://t.me/catalinplesu" target="_blank" rel="noopener">
-					<span class="link-icon" aria-hidden="true">
-						<i class="fa-brands fa-telegram"></i>
-					</span>
+					<span class="link-icon icon-telegram" aria-hidden="true"></span>
 					<span class="link-text">
 						<span class="link-value">@catalinplesu</span>
 					</span>
 				</a>
 
 				<a class="link-card" href="https://github.com/CatalinPlesu" target="_blank" rel="noopener">
-					<span class="link-icon" aria-hidden="true">
-						<i class="fa-brands fa-github"></i>
-					</span>
+					<span class="link-icon icon-github" aria-hidden="true"></span>
 					<span class="link-text">
 						<span class="link-value">CatalinPlesu</span>
 					</span>
 				</a>
 
 				<a class="link-card" href="https://www.linkedin.com/in/catalin-plesu/" target="_blank" rel="noopener">
-					<span class="link-icon" aria-hidden="true">
-						<i class="fa-brands fa-linkedin-in"></i>
-					</span>
+					<span class="link-icon icon-linkedin" aria-hidden="true"></span>
 					<span class="link-text">
 						<span class="link-value">Cătălin Pleșu</span>
 					</span>
 				</a>
 
 				<a class="link-card" href="assets/resume.pdf" target="_blank" rel="noopener">
-					<span class="link-icon" aria-hidden="true">
-						<i class="fa-solid fa-file-lines"></i>
-					</span>
+					<span class="link-icon icon-file" aria-hidden="true"></span>
 					<span class="link-text">
 						<span class="link-value">Resume</span>
 					</span>
 				</a>
 
 				<a class="link-card" href="https://www.youtube.com/channel/UC752pTuCebS37pCYwYPirow" target="_blank" rel="noopener">
-					<span class="link-icon" aria-hidden="true">
-						<i class="fa-brands fa-youtube"></i>
-					</span>
+					<span class="link-icon icon-youtube" aria-hidden="true"></span>
 					<span class="link-text">
 						<span class="link-value">Cătălin Pleșu</span>
 					</span>
 				</a>
 				</div>
 			</section>
-		</div>
+		</main>
 
 		<section class="panel-section guestbook-panel">
 			<h3>Guestbook</h3>
 			<p>Leave a note, question, or hello.</p>
 			<div id="guestbook-widget"></div>
 			<script>
-				const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 				const widgetHost = document.getElementById("guestbook-widget");
-				const script = document.createElement("script");
-				script.async = true;
-				script.src = "https://telegram.org/js/telegram-widget.js?23";
-				script.setAttribute("data-telegram-discussion", "catalinplesunet/4");
-				script.setAttribute("data-comments-limit", "10");
-				script.setAttribute("data-colorful", "1");
-				if (prefersDark) {
-					script.setAttribute("data-dark", "1");
+				const loadGuestbook = () => {
+					if (!widgetHost || widgetHost.dataset.loaded === "true") {
+						return;
+					}
+					const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+					const script = document.createElement("script");
+					script.async = true;
+					script.src = "https://telegram.org/js/telegram-widget.js?23";
+					script.setAttribute("data-telegram-discussion", "catalinplesunet/4");
+					script.setAttribute("data-comments-limit", "10");
+					script.setAttribute("data-colorful", "1");
+					if (prefersDark) {
+						script.setAttribute("data-dark", "1");
+					}
+					widgetHost.dataset.loaded = "true";
+					widgetHost.appendChild(script);
+				};
+				if ("requestIdleCallback" in window) {
+					window.requestIdleCallback(loadGuestbook, { timeout: 1500 });
+				} else {
+					window.setTimeout(loadGuestbook, 800);
 				}
-				widgetHost.appendChild(script);
 			</script>
 		</section>
+
+		<footer class="site-footer">
+			<span>Based in Chișinău, Moldova · UTC+2</span>
+			<span>catalin@plesu.net</span>
+		</footer>
 	</body>
 </html>
