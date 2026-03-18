@@ -37,6 +37,7 @@ html { scrollbar-gutter: stable; background-color: #282828; }
   --gruvbox-orange: #d65d0e;
   --gruvbox-green: #689d6a;
   --gruvbox-blue: #458588;
+  --bg-dim: 0.18;
   --nav-bg: #fbf1c7;
   --nav-text: #282828;
   --nav-hover-bg: #282828;
@@ -68,6 +69,7 @@ html { scrollbar-gutter: stable; background-color: #282828; }
     --bg-orb-4: var(--gruvbox-blue);
     --code-bg: #2b2f36;
     --code-text: #ff7ab3;
+    --bg-dim: 0.28;
     --nav-bg: #282828;
     --nav-text: #a89984;
     --nav-hover-bg: #b8bb26;
@@ -93,6 +95,7 @@ html { scrollbar-gutter: stable; background-color: #282828; }
   --bg-orb-4: var(--gruvbox-blue);
   --code-bg: #2b2f36;
   --code-text: #ff7ab3;
+  --bg-dim: 0.28;
   --nav-bg: #282828;
   --nav-text: #a89984;
   --nav-hover-bg: #b8bb26;
@@ -117,6 +120,7 @@ html { scrollbar-gutter: stable; background-color: #282828; }
   --bg-orb-4: var(--gruvbox-blue);
   --code-bg: #f8f8f8;
   --code-text: #e83e8c;
+  --bg-dim: 0.18;
   --nav-bg: #fbf1c7;
   --nav-text: #282828;
   --nav-hover-bg: #282828;
@@ -168,7 +172,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, var(--bg-dim));
 }
 
 a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1.2px; text-underline-offset: 3px; }
@@ -501,8 +505,10 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem 1.2rem;
+  justify-content: center;
+  text-align: center;
   font-size: 0.95rem;
-  color: #111111;
+  color: var(--text);
 }
 
 .guestbook-actions { margin: 0.4rem 0 1rem; }
