@@ -376,7 +376,7 @@ a:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 75%, trans
   mask-mode: alpha, alpha;
   -webkit-mask-mode: alpha, alpha;
   mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
+  -webkit-mask-composite: xor;
   pointer-events: none;
 }
 
