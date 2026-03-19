@@ -587,6 +587,14 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
   .profile-photo-wrapper { max-width: 220px; width: 100%; margin: 0 auto; }
   .hero { padding: 1.4rem 1.3rem; }
   .hero-actions { flex-direction: column; align-items: stretch; }
+  .entry-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+  .entry-row .period {
+    white-space: normal;
+  }
   .topnav a[href="inventory.html"],
   .topnav a[href="books.html"] {
     display: none;
