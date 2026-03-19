@@ -155,7 +155,7 @@ body {
   padding: 0 1.25rem 1.5rem;
   font-family: "Sora", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: clamp(15px, 1.05vw, 18px);
   line-height: 1.65;
   color: var(--text);
   background-color: transparent;
@@ -196,10 +196,14 @@ a:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 75%, trans
   margin-left: -50vw;
   margin-right: -50vw;
   padding: 0.35rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
 }
 
 .topnav a {
-  float: left;
+  flex: 0 0 auto;
   color: var(--nav-text);
   text-align: center;
   padding: 0pt 4pt 0pt 4pt;
@@ -218,7 +222,10 @@ a:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 75%, trans
 }
 
 .topnav-right {
-  float: right;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .topnav::after {
@@ -580,6 +587,10 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
   .profile-photo-wrapper { max-width: 220px; width: 100%; margin: 0 auto; }
   .hero { padding: 1.4rem 1.3rem; }
   .hero-actions { flex-direction: column; align-items: stretch; }
+  .topnav a[href="inventory.html"],
+  .topnav a[href="books.html"] {
+    display: none;
+  }
 }
     --nav-bg: #282828;
     --nav-text: #a89984;
