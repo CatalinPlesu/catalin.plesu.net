@@ -9,84 +9,87 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id="bg" aria-hidden="true"></div>
+		<aside id="bg" aria-hidden="true"></aside>
+		<a href="#content" data-skip-link>Skip to content</a>
 
-		<div class="topnav">
-			<a href="index.html">Home</a>
-			<a href="experience.html">Experience</a>
-			<a href="projects.html">Projects</a>
-			<a class="active" href="inventory.html">Inventory</a>
-			<a href="books.html">Books</a>
-			<div class="topnav-right">
-				<a href="links.html">Links</a>
-			</div>
-		</div>
+		<header>
+			<nav aria-label="Primary navigation" data-topnav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="experience.html">Experience</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="inventory.html" aria-current="page">Inventory</a></li>
+					<li><a href="books.html">Books</a></li>
+					<li><a href="links.html">Links</a></li>
+				</ul>
+			</nav>
+		</header>
 
-		<main class="page-content">
-			<header class="page-header">
-				<p class="page-eyebrow">Daily drivers</p>
+		<main id="content" data-page>
+			<header data-page-header>
+				<p data-eyebrow>Daily drivers</p>
 				<h1>Inventory</h1>
 			</header>
-			<div class="section-stack">
-				<section class="section-card inventory-section" id="hardware">
+			<section aria-label="Inventory" data-stack>
+				<section data-card data-inventory-section id="hardware">
 					<h3>Hardware</h3>
-					<article class="inventory-item">
+					<article data-inventory-item>
 						<h4>ThinkPad E595 (daily driver)</h4>
-						<ul class="inventory-list">
+						<ul data-inventory-list>
 							<li>R7 3700u, 24 GB RAM</li>
 							<li>512 GB SSD + 2 TB WD Blue HDD</li>
 							<li>Ubuntu, Zen Browser, tmux, Ghostty, Neovim</li>
 						</ul>
 					</article>
-					<article class="inventory-item">
+					<article data-inventory-item>
 						<h4>Pixel 6</h4>
-						<ul class="inventory-list">
+						<ul data-inventory-list>
 							<li>GrapheneOS</li>
 							<li>Telegram, Proton Mail, KeePassXC, Syncthing</li>
 						</ul>
 					</article>
 				</section>
 
-				<section class="section-card inventory-section" id="keyboards">
+				<section data-card data-inventory-section id="keyboards">
 					<h3>Keyboards &amp; Pointing</h3>
-					<div class="inventory-group">
+					<section data-inventory-group>
 						<h4>Keyboards</h4>
-						<p class="inventory-note">I use the Asset layout on all my keyboards.</p>
-						<article class="inventory-item">
+						<p data-inventory-note>I use the Asset layout on all my keyboards.</p>
+						<article data-inventory-item>
 							<h5>Dactyl Manuform</h5>
 							<p>DIY built. Split ergonomic, thumb cluster. QMK, Vial firmware. Used daily at work.</p>
 						</article>
-						<article class="inventory-item">
+						<article data-inventory-item>
 							<h5>Ferris Sweep x2</h5>
 							<p>DIY built. One wireless ZMK, one wired QMK, Vial.</p>
 						</article>
-						<article class="inventory-item">
+						<article data-inventory-item>
 							<h5>Franken Pad</h5>
 							<p>DIY built. Custom macropad. 5 switches, 3 rotary encoders, 3 toggle switches. QMK, Vial firmware. Used daily.</p>
 						</article>
-						<article class="inventory-item">
+						<article data-inventory-item>
 							<h5>ThinkPad keyboard</h5>
 							<p>Remapped via keyd on Linux when using the laptop directly.</p>
 						</article>
-					</div>
-					<div class="inventory-group">
+					</section>
+					<section data-inventory-group>
 						<h4>Pointing</h4>
-						<ul class="inventory-list">
+						<ul data-inventory-list>
 							<li>Trackball — nameless from AliExpress.</li>
 							<li>Vertical mouse — nameless from Temu.</li>
 						</ul>
-					</div>
-					<div class="inventory-group">
+					</section>
+					<section data-inventory-group>
 						<h4>Audio</h4>
-						<ul class="inventory-list">
+						<ul data-inventory-list>
 							<li>Bone conduction headphones.</li>
 						</ul>
-					</div>
+					</section>
 				</section>
 
-				<section class="section-card inventory-section" id="running">
+				<section data-card data-inventory-section id="running">
 					<h3>Running</h3>
-					<ul class="inventory-list">
+					<ul data-inventory-list>
 						<li>Left hand: Garmin watch</li>
 						<li>Chest: Coros heart rate strap</li>
 						<li>Eyes: running sunglasses that boost speed</li>
@@ -96,20 +99,20 @@
 					</ul>
 				</section>
 
-				<section class="section-card inventory-section" id="homelab">
+				<section data-card data-inventory-section id="homelab">
 					<h3>Homelab</h3>
-					<article class="inventory-item">
+					<article data-inventory-item>
 						<h4>Cluster</h4>
-						<ul class="inventory-list">
+						<ul data-inventory-list>
 							<li>Two-node Proxmox cluster.</li>
 							<li>The cluster laptop is separate from my daily driver.</li>
 							<li>Awake node (cluster laptop): 8 GB RAM, i5 7th-gen U-series CPU.</li>
 							<li>Sleeping node: 32 GB RAM R7 5700G PC on Wake-on-LAN.</li>
 						</ul>
 					</article>
-					<article class="inventory-item">
+					<article data-inventory-item>
 						<h4>Services</h4>
-						<ul class="inventory-list">
+						<ul data-inventory-list>
 							<li>AdGuard for DNS.</li>
 							<li>Nginx Proxy Manager for SSL termination.</li>
 							<li>Rootless Podman for containers.</li>
@@ -117,11 +120,11 @@
 						</ul>
 					</article>
 				</section>
-			</div>
+			</section>
 		</main>
 
-		<footer class="site-footer">
-			<span>Chișinău, Moldova · UTC+2</span>
+		<footer data-site-footer>
+			<address aria-label="Location">Chișinău, Moldova · UTC+2</address>
 		</footer>
 	</body>
 </html>

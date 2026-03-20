@@ -9,68 +9,85 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id="bg" aria-hidden="true"></div>
+		<aside id="bg" aria-hidden="true"></aside>
+		<a href="#content" data-skip-link>Skip to content</a>
 
-		<div class="topnav">
-			<a href="index.html">Home</a>
-			<a class="active" href="experience.html">Experience</a>
-			<a href="projects.html">Projects</a>
-			<a href="inventory.html">Inventory</a>
-			<a href="books.html">Books</a>
-			<div class="topnav-right">
-				<a href="links.html">Links</a>
-			</div>
-		</div>
+		<header>
+			<nav aria-label="Primary navigation" data-topnav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="experience.html" aria-current="page">Experience</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="inventory.html">Inventory</a></li>
+					<li><a href="books.html">Books</a></li>
+					<li><a href="links.html">Links</a></li>
+				</ul>
+			</nav>
+		</header>
 
-		<main class="page-content">
-			<header class="page-header">
-				<p class="page-eyebrow">Experience</p>
+		<main id="content" data-page>
+			<header data-page-header>
+				<p data-eyebrow>Experience</p>
 				<h1>Work & education</h1>
 			</header>
-			<div class="section-stack">
-				<section class="section-card">
-					<h3>Education</h3>
-
-					<p>
-						<span class="entry-title">
+			<section aria-label="Experience" data-stack>
+				<section data-card aria-labelledby="education">
+					<h3 id="education">Education</h3>
+					<article aria-label="Master's degree">
+						<p data-entry-title>
 							<strong>Master’s Degree in Information Technology</strong>
-							<span class="entry-title-label">Graduated</span>
-						</span>
-						<span class="entry-row"><span>Technical University of Moldova</span><span class="period">2024 – 2026</span></span>
-						<span class="entry-location">Chișinău, Moldova</span>
-					</p>
-
-					<p>
-						<strong>Bachelor’s Degree in Information Technology</strong><br>
-						<span class="entry-row"><span>Technical University of Moldova</span><span class="period">2020 – 2024</span></span>
-						<span class="entry-location">Chișinău, Moldova</span>
-					</p>
+							<small data-entry-label>Graduated</small>
+						</p>
+						<p data-entry-row>
+							<strong>Technical University of Moldova</strong>
+							<time data-period>2024 – 2026</time>
+						</p>
+						<p data-entry-location>Chișinău, Moldova</p>
+					</article>
+					<article aria-label="Bachelor's degree">
+						<p data-entry-title>
+							<strong>Bachelor’s Degree in Information Technology</strong>
+						</p>
+						<p data-entry-row>
+							<strong>Technical University of Moldova</strong>
+							<time data-period>2020 – 2024</time>
+						</p>
+						<p data-entry-location>Chișinău, Moldova</p>
+					</article>
 				</section>
 
-				<section class="section-card">
-					<h3>Professional Experience</h3>
-
-					<h4>.NET Backend Engineer</h4>
-					<p class="entry-row"><span>Jivy Group</span><span class="period">Nov 2025 — Present</span></p>
-					<p><em>Chișinău, Moldova</em></p>
-					<p>
-						Backend APIs, AI integrations for a multi-tenant AI assistant platform
-						using C# and ASP.NET Core.
-					</p>
-
-					<h4>Embedded Software Engineer</h4>
-					<p class="entry-row"><span>AROBS Software</span><span class="period">Mar 2023 — Mar 2024</span></p>
-					<p><em>Chișinău, Moldova</em></p>
-					<p>
-						Safety-related automotive software in Embedded C, working within ISO 26262 processes
-						and verification flows.
-					</p>
+				<section data-card aria-labelledby="professional">
+					<h3 id="professional">Professional Experience</h3>
+					<article aria-label=".NET Backend Engineer">
+						<h4>.NET Backend Engineer</h4>
+						<p data-entry-row>
+							<strong>Jivy Group</strong>
+							<time data-period>Nov 2025 — Present</time>
+						</p>
+						<p><em>Chișinău, Moldova</em></p>
+						<p>
+							Backend APIs, AI integrations for a multi-tenant AI assistant platform
+							using C# and ASP.NET Core.
+						</p>
+					</article>
+					<article aria-label="Embedded Software Engineer">
+						<h4>Embedded Software Engineer</h4>
+						<p data-entry-row>
+							<strong>AROBS Software</strong>
+							<time data-period>Mar 2023 — Mar 2024</time>
+						</p>
+						<p><em>Chișinău, Moldova</em></p>
+						<p>
+							Safety-related automotive software in Embedded C, working within ISO 26262 processes
+							and verification flows.
+						</p>
+					</article>
 				</section>
-			</div>
+			</section>
 		</main>
 
-		<footer class="site-footer">
-			<span>Chișinău, Moldova · UTC+2</span>
+		<footer data-site-footer>
+			<address aria-label="Location">Chișinău, Moldova · UTC+2</address>
 		</footer>
 	</body>
 </html>

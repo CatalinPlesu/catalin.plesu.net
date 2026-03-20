@@ -9,32 +9,35 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id="bg" aria-hidden="true"></div>
+		<aside id="bg" aria-hidden="true"></aside>
+		<a href="#content" data-skip-link>Skip to content</a>
 
-		<div class="topnav">
-			<a href="index.html">Home</a>
-			<a href="experience.html">Experience</a>
-			<a href="projects.html">Projects</a>
-			<a href="inventory.html">Inventory</a>
-			<a class="active" href="books.html">Books</a>
-			<div class="topnav-right">
-				<a href="links.html">Links</a>
-			</div>
-		</div>
+		<header>
+			<nav aria-label="Primary navigation" data-topnav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="experience.html">Experience</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="inventory.html">Inventory</a></li>
+					<li><a href="books.html" aria-current="page">Books</a></li>
+					<li><a href="links.html">Links</a></li>
+				</ul>
+			</nav>
+		</header>
 
-		<main class="page-content">
-			<header class="page-header">
-				<p class="page-eyebrow">Reading log</p>
+		<main id="content" data-page>
+			<header data-page-header>
+				<p data-eyebrow>Reading log</p>
 				<h1>Books</h1>
 			</header>
-			<div class="section-stack">
-				<section class="section-card">
+			<section aria-label="Books" data-stack>
+				<section data-card>
 					<h3>In progress</h3>
 					<p><strong>The Lessons of History</strong>
 					— Will &amp; Ariel Durant.</p>
 				</section>
 
-				<section class="section-card">
+				<section data-card>
 					<h3>Fiction</h3>
 					<p><strong>Candide</strong>
 					— Voltaire.</p>
@@ -44,13 +47,13 @@
 					— Isaac Asimov.</p>
 				</section>
 
-				<section class="section-card">
+				<section data-card>
 					<h3>Non-fiction</h3>
 					<p><strong>Walden</strong>
 					— Henry David Thoreau.</p>
 				</section>
 
-				<section class="section-card">
+				<section data-card>
 					<h3>Queue</h3>
 					<p>Intriguing, but tough reads</p>
 					<p><strong>Summa Technologiae</strong>
@@ -58,11 +61,11 @@
 					<p><strong>The World-Ending Fire</strong>
 					— Wendell Berry.</p>
 				</section>
-			</div>
+			</section>
 		</main>
 
-		<footer class="site-footer">
-			<span>Chișinău, Moldova · UTC+2</span>
+		<footer data-site-footer>
+			<address aria-label="Location">Chișinău, Moldova · UTC+2</address>
 		</footer>
 	</body>
 </html>

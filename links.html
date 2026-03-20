@@ -9,75 +9,43 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id="bg" aria-hidden="true"></div>
+		<aside id="bg" aria-hidden="true"></aside>
+		<a href="#content" data-skip-link>Skip to content</a>
 
-		<div class="topnav">
-			<a href="index.html">Home</a>
-			<a href="experience.html">Experience</a>
-			<a href="projects.html">Projects</a>
-			<a href="inventory.html">Inventory</a>
-			<a href="books.html">Books</a>
-			<div class="topnav-right">
-				<a class="active" href="links.html">Links</a>
-			</div>
-		</div>
+		<header>
+			<nav aria-label="Primary navigation" data-topnav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="experience.html">Experience</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="inventory.html">Inventory</a></li>
+					<li><a href="books.html">Books</a></li>
+					<li><a href="links.html" aria-current="page">Links</a></li>
+				</ul>
+			</nav>
+		</header>
 
-		<main class="page-content">
-			<header class="page-header">
-				<p class="page-eyebrow">Find me online</p>
+		<main id="content" data-page>
+			<header data-page-header>
+				<p data-eyebrow>Find me online</p>
 				<h1>Links</h1>
 			</header>
-			<section class="section-card">
-				<div class="links-grid">
-				<a class="link-card" href="mailto:catalin@plesu.net">
-					<span class="link-icon icon-envelope" aria-hidden="true"></span>
-					<span class="link-text">
-						<span class="link-value">catalin@plesu.net</span>
-					</span>
-				</a>
-
-				<a class="link-card" href="https://t.me/catalinplesu" target="_blank" rel="noopener">
-					<span class="link-icon icon-telegram" aria-hidden="true"></span>
-					<span class="link-text">
-						<span class="link-value">@catalinplesu</span>
-					</span>
-				</a>
-
-				<a class="link-card" href="https://github.com/CatalinPlesu" target="_blank" rel="noopener">
-					<span class="link-icon icon-github" aria-hidden="true"></span>
-					<span class="link-text">
-						<span class="link-value">CatalinPlesu</span>
-					</span>
-				</a>
-
-				<a class="link-card" href="https://www.linkedin.com/in/catalin-plesu/" target="_blank" rel="noopener">
-					<span class="link-icon icon-linkedin" aria-hidden="true"></span>
-					<span class="link-text">
-						<span class="link-value">Cătălin Pleșu</span>
-					</span>
-				</a>
-
-				<a class="link-card" href="assets/resume.pdf" target="_blank" rel="noopener">
-					<span class="link-icon icon-file" aria-hidden="true"></span>
-					<span class="link-text">
-						<span class="link-value">Resume</span>
-					</span>
-				</a>
-
-				<a class="link-card" href="https://www.youtube.com/channel/UC752pTuCebS37pCYwYPirow" target="_blank" rel="noopener">
-					<span class="link-icon icon-youtube" aria-hidden="true"></span>
-					<span class="link-text">
-						<span class="link-value">Cătălin Pleșu</span>
-					</span>
-				</a>
-				</div>
+			<section data-card aria-label="Contact">
+				<ul data-links-grid aria-label="Contact links">
+					<li><a href="mailto:catalin@plesu.net" data-link-card data-icon="envelope" aria-label="Email">catalin@plesu.net</a></li>
+					<li><a href="https://t.me/catalinplesu" target="_blank" rel="noopener" data-link-card data-icon="telegram" aria-label="Telegram">@catalinplesu</a></li>
+					<li><a href="https://github.com/CatalinPlesu" target="_blank" rel="noopener" data-link-card data-icon="github" aria-label="GitHub">CatalinPlesu</a></li>
+					<li><a href="https://www.linkedin.com/in/catalin-plesu/" target="_blank" rel="noopener" data-link-card data-icon="linkedin" aria-label="LinkedIn">Cătălin Pleșu</a></li>
+					<li><a href="assets/resume.pdf" target="_blank" rel="noopener" data-link-card data-icon="file" aria-label="Resume PDF">Resume</a></li>
+					<li><a href="https://www.youtube.com/channel/UC752pTuCebS37pCYwYPirow" target="_blank" rel="noopener" data-link-card data-icon="youtube" aria-label="YouTube">YouTube</a></li>
+				</ul>
 			</section>
 		</main>
 
-		<section class="panel-section guestbook-panel">
+		<aside data-panel aria-label="Guestbook">
 			<h3>Guestbook</h3>
 			<p>Leave a note, question, or hello.</p>
-			<div id="guestbook-widget"></div>
+			<section id="guestbook-widget" aria-label="Guestbook widget" aria-live="polite"></section>
 			<script>
 				const widgetHost = document.getElementById("guestbook-widget");
 				const loadGuestbook = () => {
@@ -103,10 +71,10 @@
 					window.setTimeout(loadGuestbook, 800);
 				}
 			</script>
-		</section>
+		</aside>
 
-		<footer class="site-footer">
-			<span>Chișinău, Moldova · UTC+2</span>
+		<footer data-site-footer>
+			<address aria-label="Location">Chișinău, Moldova · UTC+2</address>
 		</footer>
 	</body>
 </html>
