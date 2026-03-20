@@ -155,7 +155,7 @@ body {
   padding: 0 1.25rem 1.5rem;
   font-family: "Sora", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  font-size: clamp(15px, 1.05vw, 18px);
+  font-size: 16px;
   line-height: 1.65;
   color: var(--text);
   background-color: transparent;
@@ -273,7 +273,7 @@ a:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 75%, trans
 }
 
 .hero-lede {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: color-mix(in srgb, var(--text) 88%, transparent);
   margin: 0.6rem 0 1.2rem;
 }
@@ -382,9 +382,9 @@ a:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 75%, trans
 
 
 h1, h2, h3, h4 { font-family: "Sora", "Times New Roman", serif; letter-spacing: -0.01em; margin: 1.1em 0 0.35em; line-height: 1.25; color: var(--text); }
-h1 { font-size: clamp(1.55rem, 2.4vw, 1.85rem); }
-h2 { font-size: clamp(1.2rem, 2vw, 1.4rem); }
-h3 { font-size: clamp(1.02rem, 1.6vw, 1.2rem); }
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.375rem; }
+h3 { font-size: 1.125rem; }
 h4 { font-size: 1rem; margin-top: 0.7em; }
 
 p { margin: 0 0 0.8em; color: inherit; font-weight: 400; }
@@ -434,7 +434,7 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
 
 .quote-inline code {
   font-family: "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   line-height: 1.6;
   color: var(--code-text);
   background: var(--code-bg);
@@ -495,7 +495,7 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
 .icon-file { mask-image: url("assets/icons/file-lines.svg"); -webkit-mask-image: url("assets/icons/file-lines.svg"); }
 .icon-youtube { mask-image: url("assets/icons/youtube.svg"); -webkit-mask-image: url("assets/icons/youtube.svg"); }
 .link-text { display: flex; flex-direction: column; align-items: flex-start; gap: 0.08rem; text-align: left; }
-.link-value { font-size: 1.05rem; color: color-mix(in srgb, var(--text) 85%, transparent); }
+.link-value { font-size: 1rem; color: color-mix(in srgb, var(--text) 85%, transparent); }
 
 .section-stack {
   display: grid;
@@ -595,7 +595,7 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
 
 
 @media (max-width: 640px) {
-  body { padding: 0.75rem 0.9rem 1rem; }
+  body { padding: 0.75rem 0.9rem 1rem; font-size: 15px; }
   .content-panel { padding: 1.5rem 1.2rem 1.8rem; }
   nav { padding-top: 0.9rem; }
   .profile-layout { grid-template-columns: 1fr; }
@@ -615,9 +615,3 @@ hr { border: 0; height: 1px; background: var(--border); margin: 1.4rem 0; }
     display: none;
   }
 }
-    --nav-bg: #282828;
-    --nav-text: #a89984;
-    --nav-hover-bg: #b8bb26;
-    --nav-hover-text: #111111;
-    --nav-active-bg: #d79921;
-    --nav-active-text: #282828;
