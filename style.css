@@ -280,6 +280,8 @@ main[data-page] {
   padding-bottom: 1.6rem;
   display: grid;
   gap: 1.6rem;
+  align-content: start;
+  align-items: start;
   width: 100%;
   flex: 1 0 auto;
 }
@@ -535,6 +537,8 @@ section[data-stack] {
   display: grid;
   gap: 1.4rem;
   margin-top: 0;
+  align-content: start;
+  align-items: start;
 }
 
 section[data-card] {
@@ -615,6 +619,8 @@ footer[data-site-footer] address { font-style: normal; }
   .button,
   a[data-link-card] { transition: none; }
 }
+
+
 
 section[data-card] > h2:first-child,
 section[data-card] > h3:first-child {
