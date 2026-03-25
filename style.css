@@ -236,9 +236,6 @@ nav[data-footer-nav] li {
   margin: 0;
 }
 
-nav[data-topnav] li:last-child {
-  margin-left: auto;
-}
 
 nav[data-topnav] a,
 nav[data-footer-nav] a {
@@ -652,6 +649,8 @@ aside[data-panel] h3 { margin-top: 0; }
   }
   nav[data-footer-nav] { display: block; }
   nav[data-footer-nav] ul { justify-content: center; }
+  nav[data-topnav] ul { justify-content: center; }
+  nav[data-topnav] li:last-child { margin-left: 0; }
   p[data-entry-row] {
     flex-direction: column;
     align-items: flex-start;
