@@ -157,6 +157,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
   font-family: "Sora", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
