@@ -7,6 +7,8 @@
 		<title>Cătălin Pleșu</title>
 		<meta name="description" content="Cătălin Pleșu is a .NET backend engineer focused on C# and ASP.NET Core, AI integrations, RAG, and Azure data work.">
 		<link rel="icon" href="assets/favicon.ico">
+		<link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="assets/fonts/sora-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 		<link rel="stylesheet" href="style.css?v=20260324">
 	</head>
 	<body>
@@ -42,7 +44,9 @@
 				<section data-card aria-label="Profile">
 					<figure data-profile>
 						<picture data-profile-photo>
-							<img src="assets/profile.png" alt="Portrait of Cătălin Pleșu" width="180" height="180" decoding="async">
+							<source srcset="assets/profile.avif" type="image/avif">
+							<source srcset="assets/profile.webp" type="image/webp">
+							<img src="assets/profile.png" alt="Portrait of Cătălin Pleșu" width="180" height="180" decoding="async" loading="eager" fetchpriority="high">
 						</picture>
 						<figcaption>
 							<p>

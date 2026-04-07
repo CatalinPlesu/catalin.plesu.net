@@ -410,8 +410,16 @@ picture[data-profile-photo]::before {
   background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), var(--bg-gradient);
   background-attachment: fixed, fixed;
   border-radius: var(--radius-xl);
-  mask-image: linear-gradient(#000, #000), url("assets/profile.png");
-  -webkit-mask-image: linear-gradient(#000, #000), url("assets/profile.png");
+  mask-image: linear-gradient(#000, #000), image-set(
+    url("assets/profile.avif") type("image/avif"),
+    url("assets/profile.webp") type("image/webp"),
+    url("assets/profile.png") type("image/png")
+  );
+  -webkit-mask-image: linear-gradient(#000, #000), image-set(
+    url("assets/profile.avif") type("image/avif"),
+    url("assets/profile.webp") type("image/webp"),
+    url("assets/profile.png") type("image/png")
+  );
   mask-size: 100% 100%, contain;
   -webkit-mask-size: 100% 100%, contain;
   mask-repeat: no-repeat, no-repeat;
