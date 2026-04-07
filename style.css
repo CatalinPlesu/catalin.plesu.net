@@ -22,7 +22,7 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
 :root {
   --bg: #fbf1c7;
   --text: #1b1b1b;
-  --muted: color-mix(in srgb, var(--text) 60%, transparent);
+  --muted: color-mix(in srgb, var(--text) 74%, transparent);
   --accent: #b86b2e;
   --panel: #fdfaf4;
   --border: color-mix(in srgb, var(--text) 14%, transparent);
@@ -63,7 +63,7 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
   :root {
     --bg: #282828;
     --text: #e9e6df;
-    --muted: color-mix(in srgb, var(--text) 55%, transparent);
+    --muted: color-mix(in srgb, var(--text) 70%, transparent);
     --accent: #ffb169;
     --panel: #14171d;
     --border: color-mix(in srgb, var(--text) 18%, transparent);
@@ -96,7 +96,7 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
 :root[data-theme="dark"] {
   --bg: #282828;
   --text: #e9e6df;
-  --muted: color-mix(in srgb, var(--text) 55%, transparent);
+  --muted: color-mix(in srgb, var(--text) 70%, transparent);
   --accent: #ffb169;
   --panel: #14171d;
   --border: color-mix(in srgb, var(--text) 18%, transparent);
@@ -128,7 +128,7 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
 :root[data-theme="light"] {
   --bg: #fbf1c7;
   --text: #1b1b1b;
-  --muted: color-mix(in srgb, var(--text) 60%, transparent);
+  --muted: color-mix(in srgb, var(--text) 74%, transparent);
   --accent: #b86b2e;
   --panel: #fdfaf4;
   --border: color-mix(in srgb, var(--text) 14%, transparent);
@@ -314,7 +314,7 @@ main[data-page] {
 
 .hero-lede {
   font-size: 1rem;
-  color: color-mix(in srgb, var(--text) 88%, transparent);
+  color: color-mix(in srgb, var(--text) 92%, transparent);
   margin: 0.6rem 0 1.2rem;
 }
 
@@ -597,7 +597,7 @@ section[data-card] a:visited {
 
 .hero-eyebrow,
 [data-eyebrow] {
-  color: color-mix(in srgb, var(--nav-text) 70%, transparent);
+  color: color-mix(in srgb, var(--nav-text) 82%, transparent);
 }
 
 footer[data-site-footer] {
