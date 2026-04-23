@@ -37,7 +37,7 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
   --gruvbox-orange: #d65d0e;
   --gruvbox-green: #689d6a;
   --gruvbox-blue: #458588;
-  --bg-dim: 0.06;
+  --bg-dim: 0.18;
   --nav-bg: #fbf1c7;
   --nav-text: #282828;
   --nav-hover-bg: #282828;
@@ -51,12 +51,23 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
   --code-bg: #f8f8f8;
   --code-text: #e83e8c;
   --bg-overlay: rgba(0, 0, 0, var(--bg-dim));
-  --bg-gradient:
-    radial-gradient(ellipse 80% 60% at 60% 20%, rgba(215, 153, 33, 0.28), transparent 65%),
-    radial-gradient(ellipse 70% 60% at 20% 80%, rgba(214, 93, 14, 0.24), transparent 65%),
-    radial-gradient(ellipse 60% 50% at 60% 65%, rgba(104, 157, 106, 0.26), transparent 62%),
-    radial-gradient(ellipse 65% 40% at 50% 60%, rgba(69, 133, 136, 0.25), transparent 68%),
-    linear-gradient(180deg, #fbf1c7 0%, #f2e5bc 100%);
+  --bg-gradient: radial-gradient(circle at center,
+    #282828 0%,
+    #7c6f64 6.6%,
+    #cc241d 13.2%,
+    #fb4934 19.7%,
+    #98971a 26.4%,
+    #b8bb26 33.0%,
+    #d79921 39.6%,
+    #fabd2f 46.2%,
+    #458588 52.8%,
+    #83a598 59.4%,
+    #b16286 66.0%,
+    #d3869b 72.6%,
+    #689d6a 79.1%,
+    #8ec07c 85.7%,
+    #a89984 92.3%,
+    #fbf1c7 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,7 +87,7 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
     --bg-orb-4: var(--gruvbox-blue);
     --code-bg: #2b2f36;
     --code-text: #ff7ab3;
-    --bg-dim: 0.12;
+    --bg-dim: 0.28;
     --bg-overlay: rgba(0, 0, 0, var(--bg-dim));
     --nav-bg: #282828;
     --nav-text: #a89984;
@@ -84,12 +95,6 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
     --nav-hover-text: #111111;
     --nav-active-bg: #d79921;
     --nav-active-text: #282828;
-    --bg-gradient:
-      radial-gradient(circle at 50% 45%, rgba(251, 73, 52, 0.28) 0%, transparent 55%),
-      radial-gradient(circle at 20% 30%, rgba(184, 187, 38, 0.18) 0%, transparent 45%),
-      radial-gradient(circle at 80% 65%, rgba(131, 165, 152, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 35% 80%, rgba(177, 98, 134, 0.22) 0%, transparent 55%),
-      linear-gradient(180deg, #282828 0%, #1d2021 100%);
   }
 }
 
@@ -109,7 +114,7 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
   --bg-orb-4: var(--gruvbox-blue);
   --code-bg: #2b2f36;
   --code-text: #ff7ab3;
-  --bg-dim: 0.12;
+  --bg-dim: 0.28;
   --bg-overlay: rgba(0, 0, 0, var(--bg-dim));
   --nav-bg: #282828;
   --nav-text: #a89984;
@@ -117,12 +122,6 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
   --nav-hover-text: #111111;
   --nav-active-bg: #d79921;
   --nav-active-text: #282828;
-  --bg-gradient:
-    radial-gradient(circle at 50% 45%, rgba(251, 73, 52, 0.28) 0%, transparent 55%),
-    radial-gradient(circle at 20% 30%, rgba(184, 187, 38, 0.18) 0%, transparent 45%),
-    radial-gradient(circle at 80% 65%, rgba(131, 165, 152, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 35% 80%, rgba(177, 98, 134, 0.22) 0%, transparent 55%),
-    linear-gradient(180deg, #282828 0%, #1d2021 100%);
 }
 
 :root[data-theme="light"] {
@@ -141,14 +140,8 @@ html { scrollbar-gutter: stable; background-color: var(--bg); }
   --bg-orb-4: var(--gruvbox-blue);
   --code-bg: #f8f8f8;
   --code-text: #e83e8c;
-  --bg-dim: 0.06;
+  --bg-dim: 0.18;
   --bg-overlay: rgba(0, 0, 0, var(--bg-dim));
-  --bg-gradient:
-    radial-gradient(ellipse 80% 60% at 60% 20%, rgba(215, 153, 33, 0.28), transparent 65%),
-    radial-gradient(ellipse 70% 60% at 20% 80%, rgba(214, 93, 14, 0.24), transparent 65%),
-    radial-gradient(ellipse 60% 50% at 60% 65%, rgba(104, 157, 106, 0.26), transparent 62%),
-    radial-gradient(ellipse 65% 40% at 50% 60%, rgba(69, 133, 136, 0.25), transparent 68%),
-    linear-gradient(180deg, #fbf1c7 0%, #f2e5bc 100%);
   --nav-bg: #fbf1c7;
   --nav-text: #282828;
   --nav-hover-bg: #282828;
