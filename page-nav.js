@@ -2,9 +2,9 @@
 	const pages = [
 		{ id: "index.html", href: "index.html" },
 		{ id: "experience.html", href: "experience.html" },
-		{ id: "projects.html", href: "projects.html" },
-		{ id: "inventory.html", href: "inventory.html" },
-		{ id: "books.html", href: "books.html" },
+		// { id: "projects.html", href: "projects.html" },
+		// { id: "inventory.html", href: "inventory.html" },
+		// { id: "books.html", href: "books.html" },
 		{ id: "links.html", href: "links.html" },
 		{ id: "projects_galleryes.html", href: "projects_galleryes.html" }
 	];
