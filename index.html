@@ -1,66 +1,462 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="color-scheme" content="dark">
-		<title>Cătălin Pleșu</title>
-		<meta name="description" content="Cătălin Pleșu — .NET Engineer. Backend services in C# and ASP.NET Core.">
-		<link rel="icon" href="assets/favicon.ico">
-		<link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="assets/fonts/sora-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="stylesheet" href="style.css?v=20260324">
-	</head>
-	<body>
-		<aside id="bg" aria-hidden="true"></aside>
-		<a href="#content" data-skip-link>Skip to content</a>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Cătălin Pleșu</title>
+<meta name="description" content="Cătălin Pleșu — .NET Engineer. Backend services in C# and ASP.NET Core.">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sora-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Sora";font-weight:100 800;font-display:swap;src:url("assets/fonts/sora-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+1E00-1E9F,U+A720-A7FF}
+@font-face{font-family:"Sora";font-weight:100 800;font-display:swap;src:url("assets/fonts/sora-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+2000-206F,U+20AC}
 
-		<header>
-			<nav aria-label="Primary navigation" data-topnav>
-				<ul>
-					<li><a href="index.html" aria-current="page">Home</a></li>
-					<li><a href="experience.html">Experience</a></li>
-					<li><a href="links.html">Links</a></li>
-				</ul>
-			</nav>
-		</header>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scrollbar-gutter:stable;scroll-behavior:smooth}
+html[data-theme="dark"]{--bg:#141517;--tile:#1d1f22;--tile2:#25282c;--line:#2a2d31;--tx:#ecebe8;--mu:#a6a5a0;--ac:#f0b35a;--ac-tx:#17140d;--chip:#2a2d31;--chip-tx:#ecebe8;--tint:#f0b35a18;--sh:none;--ov:#0009;color-scheme:dark}
+html[data-theme="light"]{--bg:#f3f0ea;--tile:#ffffff;--tile2:#f8f5ef;--line:#e5e0d6;--tx:#1d1b18;--mu:#625d54;--ac:#a8350a;--ac-tx:#ffffff;--chip:#f3f0ea;--chip-tx:#7a3a1a;--tint:#a8350a10;--sh:0 1px 2px #0000000a,0 8px 24px #3a2e1a12;--ov:#1d1b18cc;color-scheme:light}
+body{font-family:Sora,system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh}
+#app{min-height:100vh;display:flex;flex-direction:column}
+#app .grid{flex:1 0 auto;width:100%;align-content:start}
+a{color:inherit;text-decoration:none}
+a.t.acc,a.btn.p{color:var(--ac-tx)}
+.proj .links a{color:var(--ac)}
+ul{list-style:none}
+img{display:block}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+a.t.acc:focus-visible{outline-color:var(--ac-tx)}
 
-		<main id="content" data-page>
-			<header data-page-header>
-				<p data-eyebrow>.NET Engineer</p>
-				<h1>Cătălin Pleșu</h1>
-			</header>
-			<section aria-label="Content" data-stack>
-				<section data-card aria-label="Profile">
-					<figure data-profile>
-						<picture data-profile-photo>
-							<source srcset="assets/profile.avif" type="image/avif">
-							<source srcset="assets/profile.webp" type="image/webp">
-							<img src="assets/profile.png" alt="Portrait of Cătălin Pleșu" width="180" height="180" decoding="async" loading="eager" fetchpriority="high">
-						</picture>
-						<figcaption>
-							<p>
-								I'm into unusual things: split ortholinear ergonomic keyboards that might
-								frighten someone, bone conduction headphones, barefoot shoes from Altra,
-								GrapheneOS, Linux even as a .NET dev, and Gruvbox.
-							</p>
-						</figcaption>
-					</figure>
-				</section>
-			</section>
-		</main>
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:20;display:flex;justify-content:center;align-items:center;gap:8px;padding:16px 12px 12px;background:linear-gradient(var(--bg) 78%,transparent)}
+.nav .nic{width:36px;height:36px;flex:none;border-radius:18px;border:1px solid var(--line);background:var(--tile);color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;align-self:center}
+.nav .nic:hover{color:var(--ac);border-color:var(--ac)}
+.nav .nic svg{width:17px;height:17px;flex:none}
+.nav .nic .sun{display:none}
+html[data-theme="light"] .nav .nic .sun{display:block}
+html[data-theme="light"] .nav .nic .moon{display:none}
+.nav ul{display:flex;gap:2px;padding:4px;border-radius:18px;background:var(--tile);border:1px solid var(--line);box-shadow:var(--sh);max-width:100%;overflow-x:auto;scrollbar-width:none}
+.nav button{font:inherit;font-size:14px;color:var(--mu);background:none;border:0;padding:8px 15px;border-radius:14px;cursor:pointer;white-space:nowrap}
+.nav button:hover{color:var(--tx)}
+.nav button[aria-current="page"]{background:var(--tile2);color:var(--tx);box-shadow:inset 0 0 0 1px var(--line)}
+.nav ul button.cta{background:var(--ac);color:var(--ac-tx);font-weight:600}
+.nav ul button.cta:hover{color:var(--ac-tx)}
+.nav ul button.cta[aria-current="page"]{background:var(--ac);box-shadow:none;outline:none;filter:brightness(.88)}
+.hero{background:var(--tile2)}
+.hero h1{margin:6px 0 8px}
+.hero .btns{margin-top:14px}
+.hero .nowline{margin-top:10px;font-size:14px}
+.hero .nowline .mu{font-size:14px}
 
-		<footer data-site-footer>
-			<address aria-label="Location">Chișinău, Moldova · UTC+2</address>
-			<nav aria-label="Secondary navigation" data-footer-nav>
-				<ul>
-					<li><a href="inventory.html">Inventory</a></li>
-					<li><a href="books.html">Books</a></li>
-					<li><a href="projects_galleryes.html">Gallery</a></li>
-				</ul>
-			</nav>
-		</footer>
-		<script data-goatcounter="https://gc.plesu.net/count" async src="https://gc.plesu.net/count.js"></script>
-		<script src="page-nav.js" data-page="index.html" defer></script>
-	</body>
+/* ---------- grid ---------- */
+.grid{max-width:1140px;margin:0 auto;padding:14px 24px 32px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:auto;gap:16px;grid-auto-flow:dense}
+.w2{grid-column:span 2}.w3{grid-column:span 3}.w4{grid-column:span 4}
+.h2{grid-row:span 2}.h3{grid-row:span 3}
+.t{background:var(--tile);border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh);padding:24px;position:relative;overflow:hidden;display:flex;flex-direction:column;animation:rise .45s both;animation-delay:calc(var(--n,0)*45ms)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){.t{animation:none}}
+.t.end{justify-content:flex-end}
+.t.mid{justify-content:center}
+.t.tint{background:var(--tint)}
+.t.acc{background:var(--ac);color:var(--ac-tx);border-color:var(--ac)}
+button.t{font:inherit;color:inherit;text-align:left;align-items:flex-start}
+a.t,button.t{cursor:pointer;transition:transform .18s,border-color .18s}
+a.t:hover,button.t:hover{transform:translateY(-3px);border-color:var(--ac)}
+a.t.acc:hover{border-color:var(--tx)}
+
+.eyebrow{color:var(--ac);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.t.acc .eyebrow{color:inherit;opacity:.9}
+.mu{color:var(--mu)}
+h1{font-size:clamp(44px,6vw,62px);margin:8px 0 10px;line-height:1.05;letter-spacing:-.015em}
+h2{font-size:22px;line-height:1.2;margin:4px 0 6px}
+h3{font-size:17px;line-height:1.25;margin:4px 0 6px}
+p{line-height:1.6;font-size:14px}
+.lead{color:var(--tx);opacity:.72;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags .chips{margin-top:0}
+.chips span{font-size:12px;background:var(--chip);color:var(--chip-tx);border-radius:6px;padding:3px 9px}
+.btns{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.btn{display:inline-block;font-size:14px;font-weight:600;padding:9px 16px;border-radius:99px;border:1px solid var(--line);background:var(--tile2)}
+.btn:hover{border-color:var(--ac)}
+.btn.p{background:var(--ac);color:var(--ac-tx);border-color:var(--ac)}
+.big{font-size:26px;font-weight:700;line-height:1.1}
+.small{font-size:14px}
+
+/* photo / image tiles - picture fills tile, no distortion */
+.t.img{padding:0;min-height:280px}
+.t.img>img,.t.img>picture{position:absolute;inset:0;width:100%;height:100%}
+.t.img picture img{width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.1);transform-origin:50% 30%}
+.t.img>img{object-fit:cover;object-position:center top}
+.t.img .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;background:linear-gradient(transparent,var(--ov));color:#fff;font-size:14px;font-weight:600}
+.t.img .cap small{display:block;font-weight:400;opacity:.8;font-size:12px}
+
+/* icons */
+.ico{display:inline-block;width:22px;height:22px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat;flex:none}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.socials a{min-width:46px;height:52px;flex:1 1 0;border-radius:14px;display:grid;place-items:center;background:var(--tile2);border:1px solid var(--line);transition:.18s}
+.socials a:hover{background:var(--ac);color:var(--ac-tx);border-color:var(--ac);transform:translateY(-2px)}
+.socials.sm{flex-wrap:nowrap}
+.socials.sm a{min-width:0}
+.linkrow{flex-direction:row;align-items:center;gap:16px}
+.linkrow .ico{width:30px;height:30px;color:var(--tx)}
+.go{font-size:.85em;margin-left:6px;color:var(--ac);font-weight:700}
+.linkrow b{display:block;font-size:17px}
+.linkrow span.mu{font-size:14px}
+
+/* home projects strip: 3 cards, image on top, text below */
+.psec .p3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.mini{padding:0;overflow:hidden}
+.mini img{width:calc(100% - 24px);aspect-ratio:16/10;object-fit:cover;background:var(--tile2);margin:12px 12px 0;border-radius:14px;border:1px solid var(--line)}
+.mini .mb{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.mini .mb p{color:var(--mu);font-size:14px;line-height:1.55}
+.mini .mb .more{margin-top:auto;padding-top:8px;font-size:14px;font-weight:700;color:var(--ac)}
+.clock{font-size:14px}
+/* email tile: whole tile = mailto, small corner button = copy */
+.mail{cursor:pointer;transition:transform .18s,border-color .18s;flex-direction:row;align-items:center;gap:16px;flex-wrap:wrap}
+.mail:hover{transform:translateY(-3px);border-color:var(--tx)}
+.mail .stretch{position:absolute;inset:0;z-index:0}
+.mail .mcol{min-width:0;position:relative;z-index:1}
+.mail .mcol .big{font-size:21px;word-break:break-all}
+.mail .mact{margin-left:auto;display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+.mail .btn{background:var(--ac-tx);color:var(--ac);border-color:var(--ac-tx)}
+.mail .copy{flex:none;z-index:2;width:42px;height:42px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;opacity:.75;cursor:pointer;display:grid;place-items:center;transition:.18s}
+.mail .copy:hover,.mail .copy:focus-visible{opacity:1;background:var(--ac-tx);color:var(--ac);border-color:var(--ac-tx)}
+
+/* home tiles size to content, no stretched dead space (photo still fills its row) */
+.pg-home{align-items:start}
+.pg-home .ph{align-self:stretch}
+/* home contact tile: dark, one orange action */
+.cmail{display:block;font-size:15px;font-weight:600;word-break:break-all;margin-top:10px}
+.cmail:hover{color:var(--ac)}
+.socials.sm a{height:44px;border-radius:12px}
+html[data-theme="light"] .socials a{border-color:#d8d2c4}
+html[data-theme="light"] .t.img{background:var(--tile2)}
+.cbtns{display:flex;gap:8px;margin-top:12px}
+.cbtns .btn.p{flex:1;text-align:center}
+.copybtn{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--tile2);color:var(--tx);cursor:pointer;display:grid;place-items:center;transition:.18s}
+.copybtn:hover{border-color:var(--ac);color:var(--ac)}
+
+/* projects */
+.pg-projects{grid-template-columns:repeat(6,1fr);grid-auto-rows:auto;grid-auto-flow:row}
+.pg-projects .w2{grid-column:span 4}
+.pg-projects .proj{grid-column:span 2}
+.pg-projects .proj.wide{grid-column:span 3}
+.pg-projects .gh{grid-column:span 2}
+.filters{grid-column:span 6;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pdiv{grid-column:1/-1;color:var(--mu);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 4px 0}
+.stack .loc{margin-top:auto;padding-top:12px;color:var(--mu);font-size:14px}
+/* featured home tile: image right, text on dark gradient left */
+.feat{padding:0;min-height:260px}
+.feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,15,.96) 0%,rgba(12,13,15,.92) 32%,rgba(12,13,15,.55) 55%,rgba(12,13,15,.05) 78%)}
+.feat .fbody{position:relative;z-index:1;max-width:46%;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:28px}
+.feat .fbody .eyebrow{color:#f0b35a}
+.feat .fbody h3{font-size:24px;color:#fff}
+.feat .fbody p{font-size:14px;line-height:1.6;color:#e8e6e2}
+.feat .fbody .more{font-size:14px;font-weight:700;color:#f0b35a}
+.pdiv[hidden]{display:none}
+.filters button{font:inherit;font-size:14px;font-weight:600;color:var(--mu);background:var(--tile);border:1px solid var(--line);border-radius:99px;padding:8px 16px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ac);border-color:var(--ac);color:var(--ac-tx)}
+.proj{padding:0}
+.proj[hidden]{display:none}
+.proj .cover{flex:0 0 auto;aspect-ratio:16/10;position:relative;overflow:hidden;background:var(--tile2);cursor:zoom-in;margin:12px 12px 0;border-radius:14px;border:1px solid var(--line)}
+.proj .cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pg-projects .proj.wide .cover{aspect-ratio:2/1}
+.proj:hover .cover img{transform:scale(1.04)}
+.proj .cover .badge{position:absolute;left:12px;bottom:12px;font-size:11.5px;font-weight:600;color:#fff;background:#000a;backdrop-filter:blur(6px);border-radius:99px;padding:4px 10px}
+.proj .body{padding:18px 20px 18px;display:flex;flex-direction:column;flex:1}
+.proj .body p{color:var(--mu);font-size:14px;line-height:1.55}
+.proj .links{margin-top:auto;padding-top:12px;display:flex;gap:14px;font-size:14px;font-weight:600}
+.proj .links a{color:var(--ac)}
+.proj .links a:hover{text-decoration:underline}
+.proj.compact .body{padding:20px}
+.status{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--tile2);border:1px solid var(--line);color:var(--mu);border-radius:99px;padding:3px 10px}
+.proj .topline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:22px}
+.tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ac)}
+
+/* experience timeline: dates left, details right */
+.tl{position:relative}
+.tl-item{display:grid;grid-template-columns:190px 1fr;gap:18px}
+.tl-item + .tl-item{margin-top:4px;padding-top:18px;border-top:1px dashed var(--line)}
+.tl-item .when{color:var(--ac);font-size:14px;font-weight:600;line-height:1.7;white-space:nowrap}
+.tl-item h3{margin-top:0}
+.role .co{font-weight:600;font-size:15px}
+.slim{flex-direction:row;align-items:center;gap:16px;padding-top:14px;padding-bottom:14px}
+.slim .btn{margin-left:auto;flex:none}
+.linkrow span.mu{font-size:14px}
+/* contact rows */
+.t.row{flex-direction:row;align-items:center;gap:14px;padding-top:14px;padding-bottom:14px}
+.t.row .ico{width:24px;height:24px}
+.t.row b{font-size:16px}
+/* contact page: 6-col grid, professional row (2+2+2) then social row (3+3) */
+.pg-contact{grid-template-columns:repeat(6,minmax(0,1fr))}
+.pg-contact .w4{grid-column:span 6}
+.pg-contact .c2{grid-column:span 2}
+.pg-contact .c3{grid-column:span 3}
+.badge2{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--ac);color:var(--ac-tx);border-radius:99px;padding:3px 10px;margin-bottom:8px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3ecf7a;margin-left:4px;margin-right:8px;box-shadow:0 0 0 4px #3ecf7a33}
+
+/* books/setup lists */
+.li li{font-size:13.5px;color:var(--mu);line-height:1.5;padding:5px 0;border-bottom:1px dashed var(--line)}
+.li li:last-child{border:0}
+.li li b{color:var(--tx);font-weight:600}
+
+footer{max-width:1000px;margin:auto auto 0;padding:16px 20px 40px;text-align:center;font-size:12.5px;color:var(--mu);width:100%}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:50;background:#000d;display:none;overflow:auto;padding:30px 16px;cursor:zoom-out}
+#lb.on{display:block}
+#lb .in{max-width:880px;margin:0 auto;display:grid;gap:12px}
+#lb h3{color:#fff;text-align:center;margin-bottom:6px}
+#lb img{width:100%;border-radius:14px}
+#lb .x{position:fixed;top:18px;right:22px;color:#fff;font-size:28px;line-height:1}
+
+/* ---------- mobile ---------- */
+@media (max-width:1020px){
+  .grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;gap:10px;padding:8px 12px 24px}
+  .w2,.w3,.w4{grid-column:span 2}
+  .pg-projects{grid-template-columns:repeat(2,1fr)}
+  .pg-projects .w2,.pg-projects .proj,.pg-projects .gh,.filters{grid-column:span 2}
+  .pg-projects .proj{grid-column:span 1}
+  .pg-projects .proj.wide{grid-column:span 1}
+  .pg-home .contact-t{grid-column:span 2}
+  .t{padding:18px;border-radius:18px}
+  .h3{grid-row:span 2}
+  .proj{grid-row:auto!important}
+  .nav button{padding:8px 11px;font-size:13px}
+  .ph{grid-column:span 1;min-height:0;aspect-ratio:4/5}
+  /* capped centered 4:5 photo: full-width tile, face crop preserved */
+  .pg-home .ph{height:340px;aspect-ratio:auto}
+  .pg-home .ph picture{width:272px;left:50%;right:auto;transform:translateX(-50%)}
+  .pg-home .ph picture img{transform:none}
+  .feat .fbody{max-width:62%}
+  .feat{min-height:220px}
+  .grid>*{order:0}
+  .grid>:first-child{order:0}
+  .ph{order:0}
+  /* tablet home: hero+photo and about+stack pairs, stack top-aligned like the rest */
+  .pg-home .hero{grid-column:span 1;align-self:stretch;justify-content:center}
+  .pg-home .about{grid-column:span 1}
+  .pg-home .stack{align-self:stretch}
+  /* tablet projects: unpaired last cards span both columns */
+  .pg-projects .proj.tabfull{grid-column:span 2}
+  /* tablet contact keeps the desktop 6-col rhythm (must come after .grid override) */
+  .pg-contact{grid-template-columns:repeat(6,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .w2,.w3,.w4,.ph,.pg-projects .proj,.pg-projects .proj.wide,.pg-home .contact-t{grid-column:span 1}
+  .pg-projects{grid-template-columns:1fr}
+  .pg-projects .w2,.pg-projects .proj,.pg-projects .gh,.filters{grid-column:span 1}
+  .pg-projects .proj.tabfull{grid-column:span 1}
+  .h2,.h3{grid-row:span 1}
+  .nav{top:0;padding-top:12px}
+  .ph{min-height:0;aspect-ratio:4/5;max-height:none}
+  .pg-home .ph{height:320px;aspect-ratio:auto}
+  .pg-home .ph picture{width:256px;left:50%;right:auto;transform:translateX(-50%)}
+  .t.img picture img{object-position:center top;transform:none}
+  .psec .p3{grid-template-columns:1fr}
+  .feat{min-height:280px}
+  .feat .fbody{max-width:100%}
+  .feat::after{background:linear-gradient(180deg,rgba(12,13,15,.9) 0%,rgba(12,13,15,.6) 45%,rgba(12,13,15,.2) 100%)}
+  .tl-item{grid-template-columns:1fr;gap:6px}
+  /* home reading order: hero, photo, about, stack, contact, featured */
+  .pg-home .hero{order:0}.pg-home .ph{order:1}.pg-home .about{order:2}.pg-home .stack{order:3}.pg-home .contact-t{order:4}.pg-home .feat{order:5}
+  /* email tile stacks: address on its own line, buttons below */
+  .mail{flex-direction:column;align-items:stretch;gap:12px}
+  .mail .mact{margin-left:0}
+  /* shorter covers + clamped descriptions on small screens */
+  .proj .cover{aspect-ratio:16/9}
+  .pg-projects .proj.wide .cover{aspect-ratio:16/9}
+  .proj .body p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  /* filters scroll sideways instead of wrapping */
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 94%,transparent);mask-image:linear-gradient(90deg,#000 94%,transparent)}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:none}
+  /* contact links: full-width title/mail/LinkedIn, then a 2x2 grid */
+  .pg-contact{grid-template-columns:repeat(2,1fr)}
+  .pg-contact .w4,.pg-contact .cli{grid-column:span 2}
+  .pg-contact .c2,.pg-contact .c3{grid-column:span 1}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+const A = "assets/";
+const ICON = (n, extra = "") => `style="--i:url(${A}icons/${n}.svg);${extra}"`;
+const photo = `<picture><source srcset="${A}profile.avif" type="image/avif"><source srcset="${A}profile.webp" type="image/webp"><img src="${A}profile.png" alt="Portrait of Cătălin Pleșu" width="337" height="470" fetchpriority="high"></picture>`;
+const EMAIL = "catalin@plesu.net";
+const RESUME = "https://assets.plesu.net/resume.pdf";
+const chips = a => `<div class="chips">${a.map(s=>`<span>${s}</span>`).join("")}</div>`;
+let n = 0;
+const T = (cls, inner, tag = "div", attrs = "") => `<${tag} class="t ${cls}" style="--n:${n++}" ${attrs}>${inner}</${tag}>`;
+const go = p => `data-go="${p}"`;
+
+
+const PROJ_IMG = {
+  mandelbrot: "fractal_1773779249.jpg",
+  scraper: "job-openings.jpg",
+  cpu: "cpu.png",
+};
+const mini = (title, desc, img) => `<a class="t mini" href="#" ${go("projects")} aria-label="${title} — see all projects"><img src="${A}projects/${img}" alt="" loading="eager"><span class="mb"><h3>${title}</h3><p>${desc}</p><span class="more">View project →</span></span></a>`;
+
+const COPY_SVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>`;
+const MOON_SVG = `<svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>`;
+const SUN_SVG = `<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>`;
+const mail = (eb, cls = "w4") => T(`${cls} acc mail`, `<a class="stretch" href="mailto:${EMAIL}" aria-label="Send an email to ${EMAIL}"></a><div class="mcol"><p class="eyebrow">${eb}</p><p class="big">${EMAIL}</p></div><div class="mact"><span class="btn">Send an email →</span><button class="copy" data-copy="${EMAIL}" aria-label="Copy email address" title="Copy email address">${COPY_SVG}</button></div>`, "div");
+
+/* ---------------- pages ---------------- */
+/* "featured" = one full-width Mandelbrot tile · "strip" = three small cards */
+const HOME_PROJECTS = "featured";
+const PAGES = {
+home: () => [
+  T("w3 hero", `<p class="eyebrow">.NET Engineer</p><h1>Cătălin Pleșu</h1>
+    <p class="lead">Backend .NET engineer building reliable services.</p>
+    <div class="btns"><a class="btn p" href="#" ${go("projects")}>View projects</a><a class="btn" href="#" ${go("experience")}>Experience</a></div>
+    <p class="nowline"><span class="dot"></span><strong>Now</strong> — .NET Engineer @ Esempla Systems</p>
+    <p class="mu" style="margin-top:6px;font-size:14px"><span class="clock"></span></p>`),
+  T("img ph", `${photo}`),
+  T("w2 about", `<p class="eyebrow">About</p><p style="font-size:15px;line-height:1.75;margin-top:8px">I'm a <strong>.NET engineer</strong> who likes understanding how things work, from backend services down to hardware. Outside of work I build my own ergonomic keyboards, run Linux and GrapheneOS, and research <strong>keyboard layout optimization</strong>, which was also my master's thesis.</p>`),
+  T("stack", `<p class="eyebrow">Stack</p>${chips(["C#","Go","Python","OCI Containers","Linux"])}<p class="mu" style="font-size:14px;margin-top:12px">Currently learning Kubernetes on a homelab cluster.</p>`, "div", `aria-label="Tech stack"`),
+  T("contact-t", `<p class="eyebrow">Contact</p>
+    <a class="cmail" href="mailto:${EMAIL}">${EMAIL}</a>
+    <div class="socials sm">
+      <a href="https://github.com/CatalinPlesu" aria-label="GitHub"><i class="ico" ${ICON("github")}></i></a>
+      <a href="https://www.linkedin.com/in/catalin-plesu/" aria-label="LinkedIn"><i class="ico" ${ICON("linkedin-in")}></i></a>
+      <a href="https://t.me/catalinplesu" aria-label="Telegram"><i class="ico" ${ICON("telegram")}></i></a>
+      <a href="https://www.youtube.com/channel/UC752pTuCebS37pCYwYPirow" aria-label="YouTube"><i class="ico" ${ICON("youtube")}></i></a>
+      <a href="${RESUME}" aria-label="Resume PDF"><i class="ico" ${ICON("file-lines")}></i></a></div>
+    <div class="cbtns"><a class="btn p" href="mailto:${EMAIL}">Send an email →</a><button class="copybtn" data-copy="${EMAIL}" aria-label="Copy email address" title="Copy email address">${COPY_SVG}</button></div>`, "div"),
+  (HOME_PROJECTS === "strip"
+  ? T("w4 psec", `<p class="eyebrow">Selected projects</p><div class="p3">
+    ${mini("Mandelbrot Visualizer","Interactive fractal explorer in Rust — multithreaded rendering, zoom and color schemes.",PROJ_IMG.mandelbrot)}
+    ${mini("Moldova Job Market Scraper","ETL pipeline tracking hiring trends, stack frequency and salary ranges.",PROJ_IMG.scraper)}
+    ${mini("8-bit CPU","A working 8-bit CPU built from logic gates plus a Python assembler.",PROJ_IMG.cpu)}
+    </div>`, "section")
+  : `<a class="t w4 feat" style="--n:5" href="#" ${go("projects")} aria-label="Featured project: Mandelbrot Visualizer — open the Projects page"><img src="${A}projects/fractal_1773779249.jpg" alt="" loading="eager"><span class="fbody"><span class="eyebrow">Featured project</span><h3>Mandelbrot Visualizer</h3><p>Interactive fractal explorer in Rust — multithreaded rendering, zoom and color schemes.</p>${chips(["Rust","Dear ImGui"])}<span class="more">See all projects →</span></span></a>`),
+].join(""),
+
+experience: () => [
+  T("w4", `<p class="eyebrow">Experience</p><h1>Work &amp; education</h1><p class="mu">Backend, embedded, and a master's degree on the side.</p>`),
+  T("w4 tl", `
+    <div class="tl-item"><div class="when">May 2026 — Present</div><div><h3>.NET Engineer — Esempla Systems</h3><p class="mu small">Chișinău, Moldova</p><p style="margin-top:8px">GovTech and digital public services.</p>${chips(["C#",".NET"])}</div></div>
+    <div class="tl-item"><div class="when">Nov 2025 — May 2026</div><div><h3>.NET Backend Engineer — Jivy Group</h3><!-- TODO(owner): add 2–3 achievements --><p class="mu">AI assistant platform.</p>${chips(["C#",".NET"])}</div></div>
+    <div class="tl-item"><div class="when">Mar 2023 — Mar 2024</div><div><h3>Embedded Software Engineer — AROBS Software</h3><!-- TODO(owner): add 2–3 achievements --><p class="mu">Automotive safety software (ISO 26262).</p>${chips(["Embedded C","ISO 26262"])}</div></div>`),
+  T("w4", `<p class="eyebrow">Education</p><h3 style="margin-top:8px">Master's Degree in Information Technology</h3><p style="font-weight:600">Technical University of Moldova</p><p class="mu small">2024 – 2026 · Chișinău, Moldova</p>`),
+  T("w4 slim linkrow", `<i class="ico" ${ICON("file-lines")}></i><div><b>Full résumé <span class="go">↗</span></b></div><span class="btn">Download PDF</span>`, "a", `href="${RESUME}"`),
+].join(""),
+
+projects: () => {
+  const P = (title, tag, desc, tech, links, imgs, cat, status = "", wide = false, tab = false) => {
+    const cover = imgs.length ? `<div class="cover" data-gallery="${encodeURIComponent(JSON.stringify({title,imgs}))}"><img src="${A}projects/${imgs[0]}" alt="${title}" loading="eager"><span class="badge">▦ ${imgs.length}</span></div>` : ``;
+    return T(`proj${imgs.length ? "" : " compact"}${wide ? " wide" : ""}${tab ? " tabfull" : ""}`, `${cover}<div class="body"><span class="topline">${status ? `<span class="status">${status}</span>` : ``}<span class="tag">${tag}</span></span><h3>${title}</h3><p>${desc}</p>${chips(tech)}<div class="links">${links.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join("")}</div></div>`, "article", `data-cat="${cat}"`);
+  };
+  const gh = "https://github.com/CatalinPlesu";
+  const filters = [["all","All"],["software","Software"],["hardware","Hardware"],["data","Data"],["thesis","Thesis"]];
+  return [
+  T("w2", `<p class="eyebrow">Selected work</p><h1>Projects</h1><p class="mu">Software, hardware and theses.</p>`),
+  T("w2 gh linkrow", `<i class="ico" ${ICON("github")}></i><div><b>All source on GitHub <span class="go">↗</span></b><span style="opacity:.92;font-size:14px">github.com/CatalinPlesu</span></div>`, "a", `href="${gh}"`),
+  `<div class="filters" role="group" aria-label="Filter projects">${filters.map(([v,l],i)=>`<button data-filter="${v}" aria-pressed="${i===0}"> ${l}</button>`).join("")}</div>`,
+  P("Mandelbrot Visualizer","Rust · graphics","Interactive fractal explorer with a Dear ImGui panel. Multithreaded CPU rendering, zoom, color schemes and near-Julia sets.",["Rust","Dear ImGui"],[["Demo","https://www.youtube.com/watch?v=Usu4ykRMAC8"],["Source",gh+"/mandelbrot"]],["fractal_1773779249.jpg","fractal_1773567169.jpg","fractal_1773567034.jpg","fractal_1773565254.jpg","fractal_1773565108.jpg"],"software"),
+  P("Moldova Job Market Scraper","Data","ETL pipeline over Moldovan job boards tracking hiring trends, stack frequency and salary ranges.",["Python","Pandas","systemd"],[["GitHub",gh]],["job-openings.jpg","job-specializations.jpg","job-responsabilities.jpg"],"data","In progress"),
+  P("8-bit CPU","Hardware · Logisim","A working 8-bit CPU built from logic gates (ALU, registers, control unit, memory bus) plus a Python assembler for its custom ISA.",["Logisim","Python"],[["GitHub",gh]],["cpu.png","alu.png"],"hardware"),
+  P("Keyboard Builds","Hardware","A DIY Dactyl Manuform (tented, hand-wired, QMK), two Ferris Sweeps, and the Franken Pad macropad I use every day.",["QMK","Hand-wired","3D printed"],[["Franken Pad source",gh+"/franken_pad"]],["dactyl-manuform.jpg","ferris-sweep.jpg"],"hardware","",true),
+  P("Canti IoT","Bachelor's thesis","Open-hardware environmental monitor: an ESP32-C3 device with a BME680 and extra sensors, plus a Flutter companion app with alerts.",["ESP32","C++","Flutter"],[["App",gh+"/Canti-Hub"],["Device",gh+"/Canti-1"]],["canti-1.png","canti-hub.png"],"hardware thesis","",true,true),
+  `<div class="pdiv" aria-hidden="true">More projects</div>`,
+  P("ErgoType","Master's thesis","Genetic algorithm for keyboard layout optimization against a configurable ergonomic fitness function. About 10–15% better than Asset on the tested corpus.",["Python","UV","Genetic algorithms"],[["Source",gh+"/ErgoType.2"]],[],"thesis"),
+  P("TimeSheet Bot","Telegram bot","Personal time tracking with Clean Architecture and DDD. SQLite storage, ScottPlot analytics charts and background workers for scheduled automation.",["C#","Clean Architecture","SQLite"],[["Source",gh+"/timesheet/"]],[],"software"),
+  P("CV Builder","Web app","Tag-driven Rails app: enter your data once and generate a polished PDF through a pdflatex pipeline.",["Ruby on Rails","LaTeX","Podman"],[["Live","https://cv-builder.catalinplesu.xyz/"],["Source",gh+"/cv_builder"]],[],"software","",false,true),
+  ].join("");
+},
+
+contact: () => {
+  const L = (cls, icon, title, sub, href) => T(`${cls} linkrow row`, `<i class="ico" ${ICON(icon)}></i><div><b>${title} <span class="go">↗</span></b><span class="mu">${sub}</span></div>`, "a", `href="${href}" target="_blank" rel="noopener"`);
+  return [
+  T("w4", `<p class="eyebrow">Find me online</p><h1>Contact</h1><p class="mu">Email is fastest. Telegram works too.</p>`),
+  mail("Email"),
+  L("w2 cli","linkedin-in","LinkedIn","Cătălin Pleșu","https://www.linkedin.com/in/catalin-plesu/"),
+  L("c2","github","GitHub","CatalinPlesu","https://github.com/CatalinPlesu"),
+  L("c2","file-lines","Resume","PDF",RESUME),
+  L("c3","telegram","Telegram","@catalinplesu","https://t.me/catalinplesu"),
+  L("c3 ytw","youtube","YouTube","Channel","https://www.youtube.com/channel/UC752pTuCebS37pCYwYPirow"),
+  ].join("");
+},
+};
+const NAV = [["home","Home"],["experience","Experience"],["projects","Projects"],["contact","Contact"]];
+
+/* ---------------- shell ---------------- */
+const app = document.getElementById("app");
+let page = "home";
+
+function render(p, push = true) {
+  page = PAGES[p] ? p : "home"; n = 0;
+  app.innerHTML = `<nav class="nav" aria-label="Primary"><ul>${NAV.map(([id,l])=>`<li><button data-go="${id}"${id==="contact" ? " class=\"cta\"" : ""} ${id===page?'aria-current="page"':""}>${l}</button></li>`).join("")}</ul><button class="nic" data-toggle-theme aria-label="Toggle light and dark theme">${MOON_SVG}${SUN_SVG}</button></nav>
+    <main class="grid pg-${page}">${PAGES[page]()}</main>
+    <footer>Chișinău, Moldova · © 2026 Cătălin Pleșu</footer>
+    <div id="lb" role="dialog" aria-modal="true" aria-label="Gallery"><span class="x" aria-hidden="true">×</span><div class="in"></div></div>`;
+  try { window.scrollTo({top:0,left:0,behavior:"instant"}); } catch (e) { window.scrollTo(0, 0); }
+  if (push) try { history.replaceState(null, "", "#" + page); } catch (e) {}
+  tick();
+}
+
+function tick() {
+  const els = document.querySelectorAll(".clock"); if (!els.length) return;
+  try {
+    const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Chisinau", hour: "2-digit", minute: "2-digit", timeZoneName: "shortOffset" }).formatToParts(new Date());
+    const get = t => (parts.find(p => p.type === t) || {}).value || "";
+    const off = get("timeZoneName").replace("GMT", "UTC");
+    els.forEach(el => { el.innerHTML = `Chișinău, Moldova<br>${get("hour")}:${get("minute")} · ${off}`; });
+  } catch (e) {}
+}
+setInterval(tick, 30000);
+
+document.addEventListener("click", e => {
+  const lb = document.querySelector("#lb");
+  if (lb && lb.classList.contains("on")) { lb.classList.remove("on"); return; }
+  const g = e.target.closest("[data-go]");
+  if (g) { e.preventDefault(); render(g.dataset.go); return; }
+  const f = e.target.closest("[data-filter]");
+  if (f) {
+    app.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", b === f));
+    const v = f.dataset.filter;
+    app.querySelectorAll(".proj").forEach(p => { p.hidden = v !== "all" && !(p.dataset.cat || "").split(" ").includes(v); });
+    const div = app.querySelector(".pdiv");
+    if (div) div.hidden = v !== "all" && ![...app.querySelectorAll(".proj.compact")].some(p => !p.hidden);
+    return;
+  }
+  if (e.target.closest("[data-toggle-theme]")) { setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"); return; }
+  const c = e.target.closest("[data-copy]");
+  if (c) {
+    e.stopPropagation();
+    const prev = c.innerHTML;
+    const done = () => { c.textContent = "✓"; c.title = "Copied"; setTimeout(() => { c.innerHTML = prev; c.title = "Copy email address"; }, 1600); };
+    (navigator.clipboard ? navigator.clipboard.writeText(c.dataset.copy) : Promise.reject()).then(done, done);
+    return;
+  }
+  const cv = e.target.closest("[data-gallery]");
+  if (cv) {
+    const d = JSON.parse(decodeURIComponent(cv.dataset.gallery));
+    lb.querySelector(".in").innerHTML = `<h3>${d.title}</h3>` + d.imgs.map(i => `<img src="${A}projects/${i}" alt="" loading="lazy">`).join("");
+    lb.classList.add("on");
+  }
+});
+addEventListener("keydown", e => {
+  if (e.key === "Escape") { const lb = document.querySelector("#lb"); lb && lb.classList.remove("on"); }
+});
+
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem("theme", t); } catch (e) {}
+}
+addEventListener("hashchange", () => { const p = location.hash.slice(1); if (PAGES[p] && p !== page) render(p, false); });
+
+let t0 = "dark"; try { t0 = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (e) {}
+setTheme(t0);
+render(location.hash.slice(1) || "home", false);
+</script>
+<script data-goatcounter="https://gc.plesu.net/count" async src="https://gc.plesu.net/count.js"></script>
+</body>
 </html>
